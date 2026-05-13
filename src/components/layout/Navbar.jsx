@@ -15,15 +15,52 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [activeSection, setActiveSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    window.addEventListener("scroll", onScroll);
+
+    if (pathname === "/") {
+      const observerOptions = {
+        root: null,
+        rootMargin: "-20% 0px -70% 0px",
+        threshold: 0,
+      };
+
+      const observerCallback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      const sections = ["about", "skills", "contact"];
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }
+  }, [pathname]);
+
+  const checkActive = (href) => {
+    if (href === "/") {
+      return pathname === "/" && activeSection === "";
+    }
+    if (href.startsWith("/#")) {
+      const id = href.split("#")[1];
+      return pathname === "/" && activeSection === id;
+    }
+    return pathname === href;
+  };
 
   return (
     <>
@@ -41,7 +78,6 @@ export default function Navbar() {
                 : "bg-transparent"
             }`}
           >
-            {/* Logo */}
             <Link href="/" className="group flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center text-xs font-bold text-white font-mono">
                 SI
@@ -51,7 +87,6 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -59,7 +94,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200
                     ${
-                      pathname === link.href
+                      checkActive(link.href)
                         ? "text-accent-blue bg-accent-blue/10"
                         : "text-text-secondary hover:text-text-primary hover:bg-white/5"
                     }`}
@@ -69,7 +104,6 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* CTA */}
             <a
               href="#contact"
               className="btn-primary text-xs px-4 py-2 bg-gradient-to-r from-emerald-500 to-accent-blue"
@@ -77,7 +111,6 @@ export default function Navbar() {
               💼 Hire Me
             </a>
 
-            {/* Mobile burger */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden p-2 rounded-xl glass text-text-primary"
@@ -88,7 +121,6 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -118,7 +150,11 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-between py-3 px-4 rounded-xl text-text-primary hover:bg-white/5 hover:text-accent-blue transition-all"
+                    className={`flex items-center justify-between py-3 px-4 rounded-xl transition-all ${
+                      checkActive(link.href)
+                        ? "text-accent-blue bg-accent-blue/10"
+                        : "text-text-primary hover:bg-white/5"
+                    }`}
                   >
                     <span className="font-medium">{link.label}</span>
                     <span className="font-mono text-xs text-text-muted">
@@ -127,15 +163,6 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
-
-              <div className="mt-4 pt-4 border-t border-border-subtle">
-                <a
-                  href="mailto:sahidulx47@gmail.com"
-                  className="btn-primary text-xs px-4 py-2 bg-gradient-to-r from-emerald-500 to-accent-blue"
-                >
-                  💼 Hire Me
-                </a>
-              </div>
             </motion.nav>
           </motion.div>
         )}

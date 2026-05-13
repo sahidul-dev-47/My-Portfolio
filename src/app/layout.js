@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden">
+      <body  suppressHydrationWarning={true} className="font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden">
         <LoadingScreen />
         <Cursor />
         <ScrollProgress />

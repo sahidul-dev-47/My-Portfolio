@@ -1,9 +1,10 @@
-import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Skills from "@/components/sections/Skills";
-import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import Contact from "@/components/sections/Contact";
+import FeaturedProjects from "@/components/sections/FeaturedProjects";
+import Hero from "@/components/sections/Hero";
+import Skills from "@/components/sections/Skills";
 
+3 
 export const metadata = {
   title: "Shahidul Islam — MERN Stack Developer",
   description:
