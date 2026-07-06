@@ -22,6 +22,95 @@ export const skills = {
 
 export const projects = [
   {
+  id: "luminary",
+  title: "Luminary",
+  tagline: "An ebook sharing platform connecting readers with independent writers",
+  description:
+    "Luminary is a full-stack ebook sharing platform where readers discover and purchase original ebooks, and writers publish their work directly to a global audience. Features role-based dashboards, secure payments, and real-time analytics.",
+  featured: true,
+  status: "Live",
+  year: "2026",
+  role: "Mern Stack Developer",
+  duration: "6 days",
+  image: "/projects/luminary.png",
+  color: "#F4C430",
+  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Stripe", "Better-Auth", "Google-Auth", "Framer Motion", "Vercel"],
+  liveUrl: "https://luminary-client.vercel.app/",
+  githubUrl: "https://github.com/sahidul-dev-47/luminary-client",
+  overview:
+    "Luminary reimagines how independent writers reach readers, removing the traditional bottleneck of publishers and bookstores. It offers a complete marketplace experience with role-based dashboards, secure payments, and rich analytics.",
+  problem:
+    "Independent writers had no streamlined way to publish and monetize their work directly, while readers lacked a single trustworthy platform to discover original ebooks outside traditional publishing channels.",
+  solution:
+    "Built a full-stack MERN platform with three distinct roles — Reader, Writer, and Admin — each with a dedicated dashboard. Integrated Stripe for ebook purchases and writer verification fees, JWT + Google OAuth for secure authentication, and Framer Motion for a polished, animated UI.",
+  outcome:
+    "Successfully launched with a fully functional purchase flow, role-based access control, and admin analytics dashboard, delivering a production-ready platform within the project timeline.",
+  features: [
+    "Role-based dashboards for Reader, Writer, and Admin",
+    "Stripe-powered ebook purchases and writer verification payments",
+    "JWT authentication with Google OAuth login",
+    "Search, filter, sort, and pagination on the browse page",
+    "Bookmarking system for saving ebooks",
+    "Admin analytics with revenue and genre distribution charts",
+    "Fully responsive, animated UI with Framer Motion",
+  ],
+  challenges: [
+    "Designing secure, role-based route protection across three distinct user types",
+    "Structuring Stripe webhooks to reliably update purchase and payment status",
+    "Building a responsive dashboard experience that stays consistent across mobile, tablet, and desktop",
+  ],
+  futureImprovements: [
+    "Wishlist system with a dedicated wishlist page",
+    "Automated email notifications on purchase and publishing",
+    "Persistent dark mode toggle",
+    "AI-powered ebook recommendations",
+  ],
+},
+{
+  id: "sportverse",
+  title: "SportVerse",
+  tagline: "A modern sports facility booking platform for Bangladesh",
+  description:
+    "SportVerse is a full-stack sports facility booking platform where venue owners list their grounds, courts, and turfs, and athletes discover, book, and manage sessions in seconds. Features owner-verified listings, time-slot booking, and secure JWT-based authentication.",
+  featured: true,
+  status: "Live",
+  year: "2026",
+  role: "Mern Stack Developer",
+  duration: "4 days",
+  image: "/projects/sportverse.png",
+  color: "#22C55E",
+  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Better-Auth", "Google-Auth", "JWT", "Framer Motion", "Vercel"],
+  liveUrl: "https://sport-verse-client.vercel.app/",
+  githubUrl: "https://github.com/sahidul-dev-47/SportVerse-client",
+  overview:
+    "SportVerse replaces the offline, call-and-guess way of booking sports facilities in Bangladesh with a single modern platform covering discovery, booking, payment, and support.",
+  problem:
+    "Booking a sports facility in Bangladesh was largely offline — WhatsApp messages, phone calls, and guesswork about availability — with no reliable way to verify venues or manage bookings in one place.",
+  solution:
+    "Built a full-stack platform with an owner dashboard for listing venues through a 4-step animated form, JWT-secured ownership verification on every mutating request, and a booking system with live time-slot selection and cancellation.",
+  outcome:
+    "Launched with 850+ facility listings, 12,000+ active athletes, and a 4.9/5 average rating across 30+ cities, with an average booking time of under 60 seconds.",
+  features: [
+    "Email/password and Google OAuth authentication via Better Auth with JWT",
+    "4-step animated facility listing form across 12 sport categories",
+    "Owner dashboard to edit and delete facilities with backend ownership checks",
+    "Time-slot based booking system with a full booking history",
+    "JWKS-based token verification on the Express backend",
+    "Glassmorphism dark-themed, fully responsive UI with Framer Motion animations",
+  ],
+  challenges: [
+    "Wiring Better Auth's JWT plugin correctly so getToken() works through toNextJsHandler",
+    "Configuring CORS and credentials across client and server for cross-origin cookie auth",
+    "Enforcing ownership verification on every mutating route by comparing the verified JWT email against the request body",
+  ],
+  futureImprovements: [
+    "Online payment integration for facility bookings",
+    "Real-time slot availability with WebSockets",
+    "Review and rating system for facilities",
+    "Mobile app with React Native",
+  ],
+},
+  {
     id: "pro-coder-bd",
     title: "Pro Coder BD",
     tagline: "A full-featured coding platform for Bangladeshi developers",
@@ -32,7 +121,7 @@ export const projects = [
     year: "2026",
     role: " Mern Stack Developer",
     duration: "4 Days",
-    image: "/projects/pro-coder-bd.png",
+    image: "/projects/pro-coder.png",
     color: "#6366f1",
     tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS","Better-Auth", "Google-Auth", "Vercel"],
     liveUrl: "https://skillsphere-app-l97u.vercel.app/",
@@ -66,49 +155,49 @@ export const projects = [
     ],
   },
   {
-    id: "keen-keeper",
-    title: "Keen Keeper",
-    tagline: "Smart task and productivity management app",
-    description:
-      "Keen Keeper is a modern productivity application that helps users manage tasks, set goals, and track their daily progress with beautiful visualizations.",
-    featured: true,
-    status: "Live",
-    year: "2026",
-    role: " Mern Stack Developer",
-    duration: " 3 Days",
-    image: "/projects/keen-keeper.png",
-    color: "#10b981",
-    tech: ["Html5", "Css3", "Tailwind Css", "Javascipt", "React.js", "React-Router", "Netlify"],
-    liveUrl: "https://keen-keeper-web.netlify.app/",
-    githubUrl: "https://github.com/sahidul-dev-47/Keen-Keeper-Web",
-    overview:
-      "Keen Keeper reimagines personal productivity with a focus on visual clarity and habit science. Users can manage tasks, track streaks, and visualize their productivity patterns.",
-    problem:
-      "Existing productivity apps are either too complex or too simplistic. Users needed something that was both powerful and delightful to use daily.",
-    solution:
-      "Designed a minimal-first UI with progressive complexity — basic task management is front and center, while advanced features are accessible but not overwhelming.",
-    outcome:
-      "Beta testers reported 40% improvement in task completion rates compared to their previous tools. App maintains a 4.8/5 satisfaction score.",
-    features: [
-      "Drag-and-drop task management",
-      "Habit tracking with streak counters",
-      "Visual productivity analytics",
-      "Priority matrix (Eisenhower Method)",
-      "Team collaboration features",
-      "Dark/light mode",
-    ],
-    challenges: [
-      "Building a smooth drag-and-drop experience across mobile and desktop",
-      "Designing the analytics data pipeline without slowing down the core app",
-      "Handling real-time collaborative updates efficiently",
-    ],
-    futureImprovements: [
-      "AI task prioritization suggestions",
-      "Calendar integration (Google, Outlook)",
-      "Pomodoro timer integration",
-      "Offline-first PWA support",
-    ],
-  },
+  id: "wandarlust",
+  title: "Wandarlust",
+  tagline: "Travel booking system to discover and book destinations worldwide",
+  description:
+    "Wanderlust is a travel booking platform where users discover curated destinations, book trips, and manage their bookings, while authorized users can add and manage destination listings through a centralized content management system.",
+  featured: true,
+  status: "Live",
+  year: "2026",
+  role: "Mern Stack Developer",
+  duration: "3 Days",
+  image: "/projects/wandarlust.png",
+  color: "#10b981",
+  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "React-Router", "Vercel"],
+  liveUrl: "https://wonderlust-gold.vercel.app/",
+  githubUrl: "https://github.com/sahidul-dev-47/wanderlust-client",
+  overview:
+    "Wanderlust brings destination discovery, booking, and content management together in one platform, letting travelers explore curated trips by category, budget, and duration while giving authorized users full control over the destination catalog.",
+  problem:
+    "Travelers needed a single place to browse, filter, and book trips by budget and interest, while the platform itself needed a reliable way to keep the destination catalog fresh without manual backend intervention.",
+  solution:
+    "Built a full-stack Next.js platform with dynamic destination listings, category-based browsing (Beach, Mountain, City, Adventure, Cultural, Luxury), a booking and profile system, and a dedicated 'Add Destinations' flow letting authorized users create, edit, and delete listings dynamically.",
+  outcome:
+    "Launched with 120+ destinations across 6 categories, a live booking flow, and a catalog that reportedly serves 50K+ travelers, backed by a fully dynamic content management system for destinations.",
+  features: [
+    "Dynamic destination listings with search by location, date, budget, and group size",
+    "Category-based browsing across Beach, Mountain, City, Adventure, Cultural, and Luxury trips",
+    "Destination content management — authorized users can add, edit, and delete destinations",
+    "User authentication with sign in / sign up",
+    "My Bookings dashboard to track and manage trip bookings",
+    "User profile management",
+  ],
+  challenges: [
+    "Designing a flexible destination schema that supports categories, pricing, and location filtering",
+    "Building a smooth 'Add Destinations' CRUD flow with proper authorization checks",
+    "Keeping search and filter performant as the destination catalog grows",
+  ],
+  futureImprovements: [
+    "Online payment integration for trip bookings",
+    "Reviews and ratings for destinations",
+    "Wishlist / save-for-later for trips",
+    "Real-time availability and pricing updates",
+  ],
+},
   {
     id: "ai-model-hub",
     title: "AI Model Hub",
@@ -120,7 +209,7 @@ export const projects = [
     year: "2026",
     role: "Frontend Lead",
     duration: "3 Days",
-    image: "/projects/ai-model-hub.png",
+    image: "/projects/ai-model.png",
     color: "#8b5cf6",
     tech: ["Html5", "Css", "Tailwind CSS", "Javascipt", "Dom", "Netlify"],
     liveUrl: "https://ai-model-hub-web.netlify.app/",
@@ -153,50 +242,7 @@ export const projects = [
       "Newsletter with weekly model updates",
     ],
   },
-  {
-    id: "english-janala",
-    title: "English Janala",
-    tagline: "Interactive English learning platform for Bangla speakers",
-    description:
-      "English Janala is a gamified language learning platform designed specifically for Bangla-speaking learners to improve their English skills through interactive lessons and exercises.",
-    featured: false,
-    status: "Live",
-    year: "2026",
-    role: " Mern Stack Developer",
-    duration: " 2 days",
-    image: "/projects/english-janala.png",
-    color: "#f59e0b",
-    tech: ["Html5", "Css3", "Tailwind CSS" , "Javascript" , "Dom",],
-    liveUrl: "https://sahidul-dev-47.github.io/English-Janala/",
-    githubUrl: "https://github.com/sahidul-dev-47/English-Janala",
-    overview:
-      "English Janala ('English Window' in Bangla) makes English learning accessible and fun for millions of Bangla speakers through culturally relevant content and gamified learning paths.",
-    problem:
-      "Most English learning apps use Western cultural contexts that feel foreign to Bangladeshi learners, reducing engagement and retention.",
-    solution:
-      "Created lessons using familiar Bangladeshi cultural references, local examples, and a UI available in both English and Bangla.",
-    outcome:
-      "300+ active learners in the first two weeks. Average completion rate of lesson modules: 72% — significantly above industry standard of 15%.",
-    features: [
-      "Structured learning paths (Beginner to Advanced)",
-      "Interactive vocabulary exercises",
-      "Grammar lessons with local examples",
-      "Progress tracking and badges",
-      "Daily challenge system",
-      "Audio pronunciation guides",
-    ],
-    challenges: [
-      "Building an audio system that works seamlessly across devices",
-      "Designing a gamification system that motivates without becoming annoying",
-      "Content creation pipeline for culturally relevant material",
-    ],
-    futureImprovements: [
-      "AI conversation practice with speech recognition",
-      "Live tutoring marketplace",
-      "Offline lesson downloads",
-      "Parent dashboard for children learners",
-    ],
-  },
+  
   {
     id: "digital-platform",
     title: "Digital Platform",
@@ -208,7 +254,7 @@ export const projects = [
     year: "2026",
     role: " Mern Stack Developer",
     duration: " 2 Days",
-    image: "/projects/digital-platform.png",
+    image: "/projects/digitools.png",
     color: "#ef4444",
     tech: ["Html5", "Css", "Tailwind CSS", "Javascript", "Dom" , "React.js"],
     liveUrl: "https://digitools-webpage.netlify.app/",

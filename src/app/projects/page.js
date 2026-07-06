@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -36,17 +37,35 @@ export default function ProjectsPage() {
               <div className="card group relative overflow-hidden h-full flex flex-col hover:-translate-y-2 transition-transform duration-500">
                 {/* Color bar */}
                 <div
-                  className="absolute top-0 left-0 right-0 h-[2px]"
+                  className="absolute top-0 left-0 right-0 h-[2px] z-20"
                   style={{ background: `linear-gradient(90deg, ${project.color}, transparent)` }}
                 />
 
                 {/* Hover glow */}
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"
                   style={{
                     background: `radial-gradient(ellipse at 40% 0%, ${project.color}12, transparent 60%)`,
                   }}
                 />
+
+                {/* Project image */}
+                {project.image && (
+                  <div className="relative w-full aspect-video overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Subtle gradient fade into card body */}
+                    <div
+                      className="absolute inset-x-0 bottom-0 h-12 pointer-events-none"
+                      style={{ background: "linear-gradient(to top, rgba(0,0,0,0.35), transparent)" }}
+                    />
+                  </div>
+                )}
 
                 <div className="relative z-10 p-6 flex flex-col flex-1">
                   {/* Meta */}

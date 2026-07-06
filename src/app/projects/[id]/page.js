@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { projects } from "@/data/portfolio";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import {
@@ -61,7 +62,30 @@ export default function ProjectDetailPage({ params }) {
             className="absolute inset-0 rounded-3xl opacity-20"
             style={{ background: `radial-gradient(ellipse at 30% 50%, ${project.color}40, transparent 70%)` }}
           />
-          <div className="relative z-10 card p-8 sm:p-12">
+          <div className="relative z-10 card p-8 sm:p-12 overflow-hidden">
+            {/* Background image */}
+            {project.image && (
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src={project.image}
+                  alt=""
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover"
+                />
+                {/* Overlay: just enough to keep text readable, image still clearly visible */}
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.85) 100%), radial-gradient(ellipse at 30% 20%, ${project.color}25, transparent 65%)`,
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Foreground content — explicit stacking layer above the image */}
+            <div className="relative z-10">
             <div
               className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl"
               style={{ background: `linear-gradient(90deg, ${project.color}, transparent)` }}
@@ -114,6 +138,7 @@ export default function ProjectDetailPage({ params }) {
                 <Github size={16} />
                 View Code
               </a>
+            </div>
             </div>
           </div>
         </AnimatedSection>
