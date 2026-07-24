@@ -22,6 +22,68 @@ export const skills = {
 
 export const projects = [
   {
+  id: "researchpilot",
+  title: "ResearchPilot AI",
+  tagline: "A Full Stack Agentic AI Research Assistant for smarter research workflows",
+  description:
+    "ResearchPilot AI is a full-stack Agentic AI application that helps users create, organize, and manage research projects while leveraging AI for report generation, conversational assistance, and research analytics in one platform.",
+  featured: true,
+  status: "Live",
+  year: "2026",
+  role: "Full Stack Developer",
+  duration: "4 days",
+  image: "/projects/researchpilot-home.png",
+  color: "#4F46E5",
+  tech: [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Tailwind CSS",
+    "Better Auth",
+    "Google OAuth",
+    "OpenAPI",
+    "TanStack Query",
+    "Recharts",
+    "Framer Motion",
+    "Vercel"
+  ],
+  liveUrl: "https://research-pilot-client.vercel.app/",
+  githubUrl: "https://github.com/sahidul-dev-47/researchPilot-client",
+  overview:
+    "ResearchPilot AI is a production-ready Full Stack Agentic AI platform that simplifies the research process by combining research management, AI-powered report generation, conversational AI, analytics, and user management into a single application.",
+  problem:
+    "Researchers and students often rely on multiple tools to manage projects, generate content, and communicate with AI, making the research process fragmented, time-consuming, and inefficient.",
+  solution:
+    "Built a modern full-stack Agentic AI platform where users can securely manage research projects, generate AI-powered research reports using OpenAPI, interact with an AI research assistant, track analytics, and organize bookmarks and favorites through a unified dashboard.",
+  outcome:
+    "Successfully delivered a production-ready Agentic AI application featuring secure authentication, AI-powered research generation, conversational AI, analytics dashboard, and a scalable backend architecture with a clean user experience.",
+  features: [
+    "Secure authentication with Better Auth and Google OAuth",
+    "Research project management with complete CRUD functionality",
+    "AI-powered research report generation using OpenAPI",
+    "Context-aware AI Chat Assistant with conversation history",
+    "Search, filtering, sorting, and pagination for research projects",
+    "Interactive analytics dashboard with charts and activity insights",
+    "Bookmarks, favorites, user profile, and notification management",
+    "Fully responsive modern UI with Framer Motion animations"
+  ],
+  challenges: [
+    "Integrating OpenAPI AI into a scalable backend while maintaining clean architecture",
+    "Synchronizing frontend, backend, authentication, and AI workflows without API mismatches",
+    "Managing secure authentication, protected routes, and role-based user experiences across the application"
+  ],
+  futureImprovements: [
+    "Document intelligence with PDF and DOCX summarization",
+    "Citation and reference generation",
+    "Multi-model AI support (OpenAI, Claude, Groq, Ollama)",
+    "Real-time collaborative research workspaces",
+    "AI-powered research comparison and recommendation engine"
+  ],
+},
+  {
   id: "luminary",
   title: "Luminary",
   tagline: "An ebook sharing platform connecting readers with independent writers",
@@ -243,50 +305,7 @@ export const projects = [
     ],
   },
   
-  {
-    id: "digital-platform",
-    title: "Digital Platform",
-    tagline: "Multi-vendor digital marketplace for Bangladesh",
-    description:
-      "Digital Platform is a comprehensive e-commerce solution enabling Bangladeshi entrepreneurs to sell digital products and services online with secure payments and analytics.",
-    featured: false,
-    status: "Live",
-    year: "2026",
-    role: " Mern Stack Developer",
-    duration: " 2 Days",
-    image: "/projects/digitools.png",
-    color: "#ef4444",
-    tech: ["Html5", "Css", "Tailwind CSS", "Javascript", "Dom" , "React.js"],
-    liveUrl: "https://digitools-webpage.netlify.app/",
-    githubUrl: "https://github.com/sahidul-dev-47/Digitools-Web",
-    overview:
-      "Digital Platform empowers Bangladeshi creators and entrepreneurs to monetize their digital skills — from selling templates to online courses and software licenses.",
-    problem:
-      "Bangladesh's growing digital economy lacked a local marketplace optimized for local payment methods, language, and seller verification standards.",
-    solution:
-      "Built a multi-vendor marketplace with local payment gateway integration, Bangla language support, and a streamlined seller onboarding process.",
-    outcome:
-      "20+ active sellers onboarded in the first month. Platform processed 150+ transactions with zero payment failures.",
-    features: [
-      "Multi-vendor seller accounts",
-      "Digital product upload and delivery system",
-      "Secure payment processing",
-      "Seller analytics dashboard",
-      "Buyer review and rating system",
-      "Admin moderation panel",
-    ],
-    challenges: [
-      "Integrating local payment gateways with inconsistent API documentation",
-      "Building a secure digital product delivery system that prevents unauthorized sharing",
-      "Designing the multi-vendor permission system without over-complicating the codebase",
-    ],
-    futureImprovements: [
-      "Subscription-based product tiers",
-      "Affiliate marketing system",
-      "Mobile app",
-      "International payment support",
-    ],
-  },
+ 
 ];
 
 export const education = [
