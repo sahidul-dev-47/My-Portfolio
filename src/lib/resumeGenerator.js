@@ -13,7 +13,8 @@ export function generateResume() {
       title: personal.role,
       location: personal.location,
       email: personal.email,
-      whatsapp: personal.whatsappNumber,
+      whatsappUrl: personal.whatsapp,
+      whatsappNumber: personal.whatsappNumber,
       github: personal.github,
       linkedin: personal.linkedin,
       website: personal.website,
@@ -40,7 +41,7 @@ function buildSkillsSection() {
 }
 
 function buildProjectsSection() {
-  return projects.slice(0, 5).map((p) => ({
+  return projects.slice(0, 3).map((p) => ({
     title: p.title,
     role: p.role,
     badge: p.badge || (p.isCustomDomain ? p.domain : "Full Stack"),

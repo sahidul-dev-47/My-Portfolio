@@ -12,269 +12,279 @@ function ResumeDocument({ resume }) {
   return (
     <div
       id="resume-document"
-      className="bg-white text-gray-900 w-full max-w-[860px] mx-auto rounded-2xl overflow-hidden
-                 shadow-[0_0_80px_rgba(0,0,0,0.5)] print:shadow-none print:rounded-none print:max-w-none print:w-full"
+      className="bg-white text-slate-900 w-full max-w-[800px] mx-auto rounded-xl p-6 sm:p-9
+                 shadow-2xl border border-slate-200/80 print:shadow-none print:border-none print:p-0 print:m-0 print:max-w-none print:w-full print:bg-white print:text-slate-900"
     >
-      {/* ── Header ── */}
-      <div className="resume-header bg-gradient-to-br from-gray-950 to-gray-900 px-4 sm:px-6 md:px-10 pt-6 sm:pt-8 md:pt-10 pb-6 md:pb-8 text-white
-                      print:bg-white print:text-black print:px-0 print:pt-0 print:pb-3 print:border-b-2 print:border-black">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-1 text-white print:text-black print:text-2xl">
-          {header.name}
-        </h1>
-        <p className="text-blue-400 print:text-gray-800 text-sm sm:text-base md:text-lg font-medium mb-3 print:mb-2">
-          {header.title}
-        </p>
+      {/* ── Executive Header ── */}
+      <div className="border-b-2 border-slate-900 pb-3 mb-3.5 print:pb-2.5 print:mb-3">
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950">
+            {header.name}
+          </h1>
+          <span className="text-xs sm:text-sm font-bold text-blue-700 font-mono">
+            {header.title}
+          </span>
+        </div>
 
-        {/* Contact Bar - Fully responsive on mobile, standard separator line for ATS print */}
-        <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-4 gap-y-1.5 text-xs sm:text-sm text-gray-300 print:text-gray-800 print:gap-x-2">
-          <span className="flex items-center gap-1.5">
-            <MapPin size={13} className="text-blue-400 print:hidden flex-shrink-0" />
+        {/* Contact Information Bar: Highly visible, clickable, 100% ATS parseable */}
+        <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1 text-xs text-slate-700">
+          <span className="inline-flex items-center gap-1 font-medium">
+            <MapPin size={12} className="text-blue-600 print:hidden flex-shrink-0" />
             <span>{header.location}</span>
           </span>
 
-          <span className="hidden print:inline text-gray-400">•</span>
+          <span className="text-slate-400">•</span>
 
-          <a href={`mailto:${header.email}`} className="flex items-center gap-1.5 hover:text-white print:text-black break-all">
-            <Mail size={13} className="text-blue-400 print:hidden flex-shrink-0" />
-            <span>{header.email}</span>
-          </a>
+          <span className="inline-flex items-center gap-1">
+            <Mail size={12} className="text-blue-600 print:hidden flex-shrink-0" />
+            <a
+              href={`mailto:${header.email}`}
+              className="font-semibold text-blue-700 hover:underline underline-offset-2"
+            >
+              {header.email}
+            </a>
+          </span>
 
-          {header.whatsapp && (
-            <>
-              <span className="hidden print:inline text-gray-400">•</span>
-              <a href={`tel:${header.whatsapp}`} className="flex items-center gap-1.5 hover:text-white print:text-black">
-                <Phone size={13} className="text-blue-400 print:hidden flex-shrink-0" />
-                <span>{header.whatsapp}</span>
-              </a>
-            </>
-          )}
+          <span className="text-slate-400">•</span>
 
-          <span className="hidden print:inline text-gray-400">•</span>
+          <span className="inline-flex items-center gap-1">
+            <Phone size={12} className="text-blue-600 print:hidden flex-shrink-0" />
+            <a
+              href={header.whatsappUrl || "https://wa.me/8801624698738"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-slate-800 hover:text-blue-700 hover:underline underline-offset-2"
+            >
+              {header.whatsappNumber || header.whatsapp}
+            </a>
+          </span>
 
-          <a
-            href={header.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-white print:text-black"
-          >
-            <Github size={13} className="text-blue-400 print:hidden flex-shrink-0" />
-            <span>github.com/sahidul-dev-47</span>
-          </a>
+          <span className="text-slate-400">•</span>
 
-          <span className="hidden print:inline text-gray-400">•</span>
+          <span className="inline-flex items-center gap-1">
+            <Linkedin size={12} className="text-blue-600 print:hidden flex-shrink-0" />
+            <a
+              href={header.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 hover:underline underline-offset-2"
+            >
+              linkedin.com/in/sahidul-islam-
+            </a>
+          </span>
 
-          <a
-            href={header.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-white print:text-black"
-          >
-            <Linkedin size={13} className="text-blue-400 print:hidden flex-shrink-0" />
-            <span>linkedin.com/in/sahidul-islam-</span>
-          </a>
+          <span className="text-slate-400">•</span>
 
-          <span className="hidden print:inline text-gray-400">•</span>
+          <span className="inline-flex items-center gap-1">
+            <Github size={12} className="text-blue-600 print:hidden flex-shrink-0" />
+            <a
+              href={header.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-slate-800 hover:text-blue-700 hover:underline underline-offset-2"
+            >
+              github.com/sahidul-dev-47
+            </a>
+          </span>
 
-          <a
-            href={header.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-white print:text-black"
-          >
-            <Globe size={13} className="text-blue-400 print:hidden flex-shrink-0" />
-            <span>{header.website?.replace("https://", "")}</span>
-          </a>
+          <span className="text-slate-400">•</span>
+
+          <span className="inline-flex items-center gap-1">
+            <Globe size={12} className="text-blue-600 print:hidden flex-shrink-0" />
+            <a
+              href={header.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 hover:underline underline-offset-2"
+            >
+              shahidul.dev
+            </a>
+          </span>
         </div>
       </div>
 
       {/* ── Document Body ── */}
-      <div className="px-4 sm:px-6 md:px-10 py-6 sm:py-8 space-y-6 sm:space-y-7 print:px-0 print:py-2 print:space-y-2.5">
+      <div className="space-y-3.5 print:space-y-3 text-[12.5px] leading-relaxed text-slate-700">
 
         {/* ── Professional Summary ── */}
-        <Section title="Professional Summary">
-          <p className="text-xs sm:text-sm text-gray-600 print:text-gray-800 print:text-[10.5px] leading-relaxed print:leading-snug">
+        <section className="page-break-avoid">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-950 pb-0.5 border-b border-slate-300 mb-1">
+            Professional Summary
+          </h2>
+          <p className="text-slate-700 leading-snug">
             {summary}
           </p>
-        </Section>
+        </section>
 
         {/* ── Technical Skills ── */}
-        <Section title="Technical Skills">
-          <div className="space-y-2 print:space-y-1">
-            {[
-              { label: "Frontend", items: skills.frontend },
-              { label: "Backend", items: skills.backend },
-              { label: "Tools & DevOps", items: skills.tools },
-            ].map(({ label, items }) => (
-              <div key={label} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2 text-xs sm:text-sm print:text-[10.5px]">
-                <span className="w-full sm:w-28 font-semibold text-gray-900 print:w-28 flex-shrink-0">
-                  {label}:
-                </span>
-                <span className="text-gray-600 print:text-gray-800">
-                  {items.join(" • ")}
-                </span>
-              </div>
-            ))}
+        <section className="page-break-avoid">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-950 pb-0.5 border-b border-slate-300 mb-1">
+            Technical Skills
+          </h2>
+          <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="w-28 font-bold text-slate-900 flex-shrink-0">
+                Frontend:
+              </span>
+              <span className="text-slate-700">
+                {skills.frontend.join(" • ")}
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="w-28 font-bold text-slate-900 flex-shrink-0">
+                Backend:
+              </span>
+              <span className="text-slate-700">
+                {skills.backend.join(" • ")}
+              </span>
+            </div>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-1">
+              <span className="w-28 font-bold text-slate-900 flex-shrink-0">
+                Tools & DevOps:
+              </span>
+              <span className="text-slate-700">
+                {skills.tools.join(" • ")}
+              </span>
+            </div>
           </div>
-        </Section>
+        </section>
 
-        {/* ── Featured Projects ── */}
-        {/*
-            On-screen: Shows all 5 projects.
-            Print/Download mode: Shows only top 3 projects (print:hidden on idx >= 3)
-            for guaranteed 1-page ATS fit.
-        */}
-        <Section title="Featured Projects">
-          <div className="space-y-4 print:space-y-2">
-            {projects.map((p, idx) => (
-              <div
-                key={p.title}
-                className={`border-l-2 border-blue-200 pl-3 sm:pl-4 print:border-l print:border-gray-400 print:pl-2.5 page-break-avoid ${
-                  idx >= 3 ? "print:hidden" : ""
-                }`}
-              >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                  <div>
-                    <span className="font-semibold text-gray-900 text-sm sm:text-base print:text-xs">
-                      {p.title}
-                    </span>
-                    <span className="text-gray-500 text-xs sm:text-sm ml-1.5 print:text-[10px]">
-                      — {p.role}
-                    </span>
+        {/* ── Key Projects (Top 3 Only) ── */}
+        <section className="page-break-avoid">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-950 pb-0.5 border-b border-slate-300 mb-1.5">
+            Key Featured Projects
+          </h2>
+          <div className="space-y-2.5">
+            {projects.slice(0, 3).map((p) => {
+              const displayUrl = p.liveUrl.replace("https://", "").replace(/\/$/, "");
+              const displayGithub = p.githubUrl.replace("https://github.com/", "");
+
+              return (
+                <div key={p.title} className="page-break-avoid">
+                  {/* Title + Role + Live/Code Links */}
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-0.5">
+                    <div className="flex items-baseline flex-wrap gap-x-1.5">
+                      <span className="font-bold text-slate-950 text-[13.5px]">
+                        {p.title}
+                      </span>
+                      <span className="text-slate-500 text-[11px] italic">
+                        — {p.role}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center flex-wrap gap-x-2 text-[11px] font-mono">
+                      <a
+                        href={p.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-bold text-blue-700 hover:underline"
+                      >
+                        Live: {displayUrl}
+                      </a>
+                      <span className="text-slate-300">•</span>
+                      <a
+                        href={p.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-slate-600 hover:underline"
+                      >
+                        Code: {displayGithub}
+                      </a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2.5 text-xs text-gray-500 print:text-[10px]">
-                    <span className="font-medium text-blue-600 print:text-gray-800">{p.badge}</span>
-                    <span>{p.year}</span>
-                    <a
-                      href={p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-blue-600 hover:underline no-print font-medium"
-                    >
-                      <ExternalLink size={11} /> Live Demo
-                    </a>
-                    <a
-                      href={p.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-blue-600 hover:underline no-print font-medium"
-                    >
-                      <Github size={11} /> Code
-                    </a>
+
+                  {/* Tagline */}
+                  <p className="text-slate-700 text-[11.5px] mb-0.5 leading-snug">
+                    {p.description}
+                  </p>
+
+                  {/* Bullets */}
+                  <ul className="space-y-0.5 text-[11.5px] text-slate-700 pl-1 leading-snug">
+                    {p.highlights.slice(0, 2).map((h, i) => (
+                      <li key={i} className="flex items-start gap-1.5">
+                        <span className="text-slate-900 font-bold leading-tight select-none">•</span>
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Tech stack */}
+                  <div className="text-[10.5px] text-slate-600 mt-0.5">
+                    <span className="font-semibold text-slate-800">Stack: </span>
+                    <span>{p.tech.join(", ")}</span>
                   </div>
                 </div>
-
-                <p className="text-xs sm:text-sm text-gray-600 print:text-gray-800 print:text-[10px] mb-1.5">
-                  {p.description}
-                </p>
-
-                <ul className="space-y-1 print:space-y-0.5">
-                  {p.highlights.map((h, i) => (
-                    <li
-                      key={i}
-                      className={`text-xs sm:text-sm text-gray-600 print:text-gray-800 print:text-[10px] flex items-start gap-1.5 ${
-                        i >= 2 ? "print:hidden" : ""
-                      }`}
-                    >
-                      <CheckCircle size={13} className="text-blue-500 flex-shrink-0 mt-0.5 print:hidden" />
-                      <span className="hidden print:inline-block mr-1 text-black font-bold">•</span>
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex flex-wrap gap-1.5 mt-2 print:mt-1">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[11px] sm:text-xs px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100
-                                 print:bg-transparent print:p-0 print:border-none print:text-gray-700 print:text-[9.5px]"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-        </Section>
+        </section>
 
         {/* ── Experience ── */}
-        <Section title="Experience">
+        <section className="page-break-avoid">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-950 pb-0.5 border-b border-slate-300 mb-1">
+            Professional Experience
+          </h2>
           {experience.map((e) => (
-            <div key={e.role} className="border-l-2 border-blue-200 pl-3 sm:pl-4 print:border-l print:border-gray-400 print:pl-2.5 page-break-avoid">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
+            <div key={e.role} className="page-break-avoid">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-0.5">
                 <div>
-                  <span className="font-semibold text-gray-900 text-sm sm:text-base print:text-xs">{e.role}</span>
-                  <span className="text-gray-500 text-xs sm:text-sm ml-1.5 print:text-[10px]">@ {e.company}</span>
+                  <span className="font-bold text-slate-950 text-[13px]">{e.role}</span>
+                  <span className="text-slate-600 text-[11.5px] ml-1.5 italic">
+                    @ {e.company}
+                  </span>
                 </div>
-                <div className="text-xs text-gray-500 print:text-[10px]">{e.period}</div>
+                <div className="text-[11px] text-slate-500 font-mono">{e.period}</div>
               </div>
-              <ul className="space-y-1 mt-1.5 print:mt-1 print:space-y-0.5">
-                {e.highlights.map((h, i) => (
-                  <li
-                    key={i}
-                    className={`text-xs sm:text-sm text-gray-600 print:text-gray-800 print:text-[10px] flex items-start gap-1.5 ${
-                      i >= 3 ? "print:hidden" : ""
-                    }`}
-                  >
-                    <CheckCircle size={13} className="text-blue-500 flex-shrink-0 mt-0.5 print:hidden" />
-                    <span className="hidden print:inline-block mr-1 text-black font-bold">•</span>
+              <ul className="space-y-0.5 text-[11.5px] text-slate-700 pl-1 mt-0.5 leading-snug">
+                {e.highlights.slice(0, 2).map((h, i) => (
+                  <li key={i} className="flex items-start gap-1.5">
+                    <span className="text-slate-900 font-bold leading-tight select-none">•</span>
                     <span>{h}</span>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-        </Section>
+        </section>
 
         {/* ── Education ── */}
-        <Section title="Education">
+        <section className="page-break-avoid">
+          <h2 className="text-[11px] font-bold uppercase tracking-wider text-slate-950 pb-0.5 border-b border-slate-300 mb-1">
+            Education
+          </h2>
           {education.map((e) => (
-            <div key={e.degree} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 page-break-avoid">
+            <div key={e.degree} className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 text-[12px] page-break-avoid">
               <div>
-                <p className="font-semibold text-gray-900 text-xs sm:text-sm print:text-[10.5px]">{e.degree}</p>
-                <p className="text-gray-600 text-xs sm:text-sm print:text-[10px]">{e.institution} — {e.location}</p>
-                <p className="text-gray-500 text-xs print:text-[9.5px]">{e.field}</p>
+                <span className="font-bold text-slate-950">{e.degree}</span>
+                <span className="text-slate-600 ml-1.5">— {e.institution}, {e.location} ({e.field})</span>
               </div>
-              <span className="text-xs sm:text-sm text-gray-500 print:text-[10px] font-mono">{e.year}</span>
+              <span className="text-[11px] text-slate-500 font-mono">{e.year}</span>
             </div>
           ))}
-        </Section>
+        </section>
       </div>
-    </div>
-  );
-}
-
-function Section({ title, children }) {
-  return (
-    <div className="page-break-avoid">
-      <div className="flex items-center gap-2.5 mb-2.5 print:mb-1">
-        <h2 className="text-xs font-bold uppercase tracking-[0.15em] text-blue-600 print:text-black print:text-[10.5px]">
-          {title}
-        </h2>
-        <div className="flex-1 h-[1.5px] bg-blue-100 print:bg-black" />
-      </div>
-      {children}
     </div>
   );
 }
 
 export default function ResumeClient({ resume }) {
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    window.print();
+  };
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-28 pb-20 px-3 sm:px-6">
-      {/* Controls (hidden on print) */}
-      <div className="no-print max-w-[860px] mx-auto mb-6">
+    <div className="resume-page-wrapper min-h-screen pt-24 sm:pt-28 pb-20 px-3 sm:px-6 bg-[#050508] print:bg-white print:p-0 print:m-0 print:min-h-0">
+      {/* Controls Bar (hidden during print/PDF generation) */}
+      <div className="no-print max-w-[800px] mx-auto mb-6">
         <AnimatedSection>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <div className="section-label mb-1.5">Auto-Generated</div>
+              <div className="section-label mb-1.5">Professional Document</div>
               <h1 className="section-title text-2xl sm:text-3xl">
                 My <span className="gradient-text italic">Resume</span>
               </h1>
               <p className="text-text-secondary text-xs sm:text-sm mt-1">
-                ATS-friendly • Single-Page Print/PDF • Auto-generated from portfolio data
+                ATS Certified • 1-Page Layout • Pure White Print & Download
               </p>
             </div>
             <div className="flex flex-wrap gap-2.5 w-full sm:w-auto">
@@ -284,7 +294,7 @@ export default function ResumeClient({ resume }) {
                 whileTap={{ scale: 0.96 }}
               >
                 <Printer size={15} />
-                Print
+                Print / Save PDF
               </motion.button>
               <motion.button
                 onClick={handlePrint}
@@ -298,19 +308,19 @@ export default function ResumeClient({ resume }) {
           </div>
         </AnimatedSection>
 
-        {/* ATS tip badge */}
+        {/* ATS Quality Notice */}
         <AnimatedSection delay={0.1} className="mt-4">
           <div className="flex items-start sm:items-center gap-2.5 px-4 py-3 rounded-xl bg-accent-blue/5 border border-accent-blue/20 text-xs sm:text-sm">
             <CheckCircle size={16} className="text-accent-blue flex-shrink-0 mt-0.5 sm:mt-0" />
             <span className="text-text-secondary">
-              <strong className="text-text-primary">1-Page ATS Certified:</strong> Displays all 5 projects on screen, and automatically formats the top 3 projects into a clean single-page layout when downloaded/printed as PDF.
+              <strong className="text-text-primary">Single-Page ATS Certified:</strong> Pure white layout, verified contact details (<span className="text-blue-400">contact@shahidulislam.me</span>), and clickable account links. <span className="text-emerald-400 font-medium">Tip:</span> প্রিন্ট ডায়ালগে Destination হিসেবে <strong className="text-white">&quot;Save as PDF&quot;</strong> সিলেক্ট করুন যাতে সব লিংক ১০০% ক্লিকেবল থাকে।
             </span>
           </div>
         </AnimatedSection>
       </div>
 
-      {/* Resume Document */}
-      <div className="transition-all duration-300">
+      {/* Clean ATS Resume Document */}
+      <div className="print:m-0 print:p-0">
         <ResumeDocument resume={resume} />
       </div>
     </div>

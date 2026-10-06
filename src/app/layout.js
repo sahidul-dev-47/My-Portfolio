@@ -34,11 +34,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body suppressHydrationWarning={true} className="font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden">
-        <ScrollProgress />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body
+        suppressHydrationWarning={true}
+        className="font-body bg-bg-primary text-text-primary antialiased overflow-x-hidden print:bg-white print:text-slate-900"
+      >
+        <div className="no-print">
+          <ScrollProgress />
+        </div>
+        <div className="no-print">
+          <Navbar />
+        </div>
+        <main className="print:m-0 print:p-0 print:bg-white">
+          {children}
+        </main>
+        <div className="no-print">
+          <Footer />
+        </div>
       </body>
     </html>
   );

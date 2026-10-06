@@ -111,20 +111,21 @@ body {
   }
 }
 
-/* Print styles for 1-Page ATS Resume */
+/* Print styles for ATS-Compliant 1-Page Resume */
 @media print {
   @page {
     size: A4 portrait;
-    margin: 8mm 10mm;
+    margin: 8mm 12mm;
   }
 
-  html, body {
+  /* Force pure white background on the entire print document */
+  html, body, main, .resume-page-wrapper {
     background: #ffffff !important;
-    color: #111827 !important;
-    font-size: 10.5px !important;
-    line-height: 1.35 !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
     margin: 0 !important;
     padding: 0 !important;
+    min-height: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -133,7 +134,8 @@ body {
     display: none !important;
   }
 
-  header, nav, footer, .no-print {
+  /* Completely hide all site navigation, bars, and footer */
+  header, nav, footer, .no-print, [class*="ScrollProgress"] {
     display: none !important;
   }
 
@@ -142,13 +144,22 @@ body {
   }
 
   #resume-document {
+    display: block !important;
     box-shadow: none !important;
+    border: none !important;
     border-radius: 0 !important;
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    border: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  a {
+    color: #1d4ed8 !important;
+    text-decoration: none !important;
   }
 
   .page-break-avoid {

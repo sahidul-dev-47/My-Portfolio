@@ -2,7 +2,7 @@ export const personal = {
   name: "Shahidul Islam",
   role: "Full Stack MERN Developer",
   location: "Chandpur, Bangladesh",
-  email: "sahidulx47@gmail.com",
+  email: "contact@shahidulislam.me",
   whatsapp: "https://wa.me/8801624698738",
   whatsappNumber: "+880 1624-698738",
   facebook: "https://www.facebook.com/share/17ihAyeDLQ/",
@@ -299,7 +299,7 @@ export const experience = [
     role: "Full Stack Developer & Solo Product Builder",
     company: "Production Web Applications",
     location: "Chandpur, Bangladesh",
-    period: "2024 – Present",
+    period: "2026",
     description:
       "Engineering and deploying real-world, full-stack web platforms serving active users. Leading end-to-end architecture from database design to modern UI and cloud deployments.",
     highlights: [
