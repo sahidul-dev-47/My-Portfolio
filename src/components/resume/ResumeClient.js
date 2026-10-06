@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Download, Printer, Mail, Github, Linkedin,
-  Globe, MapPin, ExternalLink, CheckCircle
+  Globe, MapPin, ExternalLink, CheckCircle, Phone
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 
@@ -30,6 +30,12 @@ function ResumeDocument({ resume }) {
             <Mail size={13} className="text-blue-400" />
             {header.email}
           </a>
+          {header.whatsapp && (
+            <span className="flex items-center gap-1.5">
+              <Phone size={13} className="text-blue-400" />
+              {header.whatsapp}
+            </span>
+          )}
           <a href={header.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white">
             <Github size={13} className="text-blue-400" />
             GitHub
@@ -79,7 +85,7 @@ function ResumeDocument({ resume }) {
                     <span className="text-gray-500 text-sm ml-2">— {p.role}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <span>{p.duration}</span>
+                    <span className="font-medium text-blue-600">{p.badge}</span>
                     <span>{p.year}</span>
                     <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
                        className="flex items-center gap-1 text-blue-600 hover:underline no-print">
@@ -215,10 +221,10 @@ export default function ResumeClient({ resume }) {
         </AnimatedSection>
       </div>
 
-      {/* Resume document */}
-      <AnimatedSection delay={0.15}>
+      {/* Resume document rendered immediately */}
+      <div className="transition-all duration-300">
         <ResumeDocument resume={resume} />
-      </AnimatedSection>
+      </div>
     </div>
   );
 }

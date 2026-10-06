@@ -11,12 +11,12 @@ export default function LoadingScreen() {
       setCount((c) => {
         if (c >= 100) {
           clearInterval(interval);
-          setTimeout(() => setLoading(false), 400);
+          setTimeout(() => setLoading(false), 150);
           return 100;
         }
-        return c + Math.floor(Math.random() * 12) + 3;
+        return c + 20;
       });
-    }, 40);
+    }, 25);
     return () => clearInterval(interval);
   }, []);
 

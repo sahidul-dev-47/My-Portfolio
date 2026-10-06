@@ -13,6 +13,7 @@ export function generateResume() {
       title: personal.role,
       location: personal.location,
       email: personal.email,
+      whatsapp: personal.whatsappNumber,
       github: personal.github,
       linkedin: personal.linkedin,
       website: personal.website,
@@ -26,8 +27,8 @@ export function generateResume() {
 }
 
 function buildSummary() {
-  const allTech = [...skills.frontend, ...skills.backend].slice(0, 8).join(", ");
-  return `Passionate ${personal.role} with hands-on experience building production-ready full-stack web applications. Proficient in ${allTech}, and developer tooling. Built and deployed ${projects.length} real-world projects serving live users. Self-driven learner committed to writing clean, scalable code and delivering exceptional user experiences.`;
+  const allTech = [...skills.frontend.slice(0, 5), ...skills.backend.slice(0, 4)].join(", ");
+  return `Results-driven ${personal.role} and product builder with hands-on experience designing, developing, and deploying live production web applications, including custom-domain platforms (EduraCore and Shahrasti Blood). Proficient in ${allTech}, modern state management, and scalable REST API architectures. Dedicated to clean code, optimal performance, and building user-centric solutions.`;
 }
 
 function buildSkillsSection() {
@@ -39,10 +40,10 @@ function buildSkillsSection() {
 }
 
 function buildProjectsSection() {
-  return projects.map((p) => ({
+  return projects.slice(0, 5).map((p) => ({
     title: p.title,
     role: p.role,
-    duration: p.duration,
+    badge: p.badge || (p.isCustomDomain ? p.domain : "Full Stack"),
     year: p.year,
     status: p.status,
     description: p.tagline,

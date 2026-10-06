@@ -70,15 +70,20 @@ export default function ProjectsPage() {
                 <div className="relative z-10 p-6 flex flex-col flex-1">
                   {/* Meta */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       <span
                         className={`text-xs font-mono px-2 py-0.5 rounded-full border ${
-                          STATUS_COLORS[project.status] || ""
+                          STATUS_COLORS[project.status] || "text-emerald-400 bg-emerald-400/10 border-emerald-400/30"
                         }`}
                       >
                         {project.status}
                       </span>
-                      {project.featured && (
+                      {project.isCustomDomain && (
+                        <span className="text-xs font-mono px-2 py-0.5 rounded-full border border-cyan-400/30 text-cyan-300 bg-cyan-400/10">
+                          {project.domain}
+                        </span>
+                      )}
+                      {project.featured && !project.isCustomDomain && (
                         <span className="text-xs font-mono px-2 py-0.5 rounded-full border border-accent-blue/30 text-accent-blue bg-accent-blue/10">
                           Featured
                         </span>
@@ -95,10 +100,14 @@ export default function ProjectsPage() {
                     {project.tagline}
                   </p>
 
-                  {/* Role / Duration */}
-                  <div className="flex items-center gap-4 text-xs font-mono text-text-muted mb-4">
-                    <span>🧑‍💻 {project.role}</span>
-                    <span>⏱ {project.duration}</span>
+                  {/* Role / Badge */}
+                  <div className="flex items-center justify-between text-xs font-mono text-text-muted mb-4">
+                    <span className="text-accent-blue font-medium">{project.role}</span>
+                    {project.badge && (
+                      <span className="text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full bg-emerald-500/10">
+                        {project.badge}
+                      </span>
+                    )}
                   </div>
 
                   {/* Tech */}

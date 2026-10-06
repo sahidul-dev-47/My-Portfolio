@@ -4,7 +4,7 @@ import Image from "next/image";
 import { projects } from "@/data/portfolio";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import {
-  ArrowLeft, Github, ExternalLink, Clock, User,
+  ArrowLeft, Github, ExternalLink, Globe, User,
   Calendar, CheckCircle, AlertTriangle, Lightbulb, Zap
 } from "lucide-react";
 
@@ -114,7 +114,7 @@ export default function ProjectDetailPage({ params }) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
               {[
                 { icon: User, label: "Role", value: project.role },
-                { icon: Clock, label: "Duration", value: project.duration },
+                { icon: Globe, label: "Platform", value: project.isCustomDomain ? project.domain : (project.badge || "Web Application") },
                 { icon: Calendar, label: "Year", value: project.year },
                 { icon: Zap, label: "Status", value: project.status },
               ].map(({ icon: Icon, label, value }) => (

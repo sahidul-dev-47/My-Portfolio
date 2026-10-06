@@ -2,30 +2,30 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { personal } from "@/data/portfolio";
-import { Code2, Rocket, Heart } from "lucide-react";
+import { Code2, Rocket, Heart, CheckCircle2, Globe, Cpu } from "lucide-react";
 
 const stats = [
-  { value: "5+", label: "Projects Built" },
-  { value: "6mo", label: "Experience" },
-  { value: "3", label: "Deployments Live" },
-  { value: "100%", label: "Passion" },
+  { value: "2", label: "Custom Domain Apps" },
+  { value: "6+", label: "Full-Stack Apps" },
+  { value: "100%", label: "Production Focused" },
+  { value: "Next.js 14", label: "Core Architecture" },
 ];
 
 const traits = [
   {
     icon: Code2,
-    title: "Clean Code",
-    desc: "Writing readable, maintainable code is as important as making it work.",
+    title: "Clean Full-Stack Architecture",
+    desc: "Writing modular, scalable code with Next.js App Router, Express, and well-indexed MongoDB schemas.",
   },
   {
     icon: Rocket,
-    title: "Ship Fast",
-    desc: "From idea to deployment — I build and launch production-ready apps.",
+    title: "Real-World Problem Solver",
+    desc: "Built EduraCore to fix language learning methodology and Shahrasti Blood for emergency healthcare.",
   },
   {
     icon: Heart,
-    title: "User First",
-    desc: "Every design decision is made with the end user's experience in mind.",
+    title: "High-Standard UX & Polish",
+    desc: "Obsessed with fast load speeds, intuitive interaction design, and reliable mobile responsiveness.",
   },
 ];
 
@@ -41,36 +41,38 @@ export default function About() {
       <div className="container-max relative z-10">
         {/* Section header */}
         <AnimatedSection className="text-center mb-16">
-          <div className="section-label mb-4">Who I Am</div>
+          <div className="section-label mb-3">Who I Am</div>
           <h2 className="section-title">
             About <span className="gradient-text italic">Me</span>
           </h2>
+          <p className="text-text-secondary text-sm sm:text-base mt-2 max-w-lg mx-auto">
+            A solo developer dedicated to turning ambitious ideas into production-ready software.
+          </p>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — text */}
           <div>
             <AnimatedSection delay={0.1}>
-              <p className="text-text-secondary text-lg leading-relaxed mb-6">
-                {personal.about}
+              <p className="text-text-primary text-lg sm:text-xl font-medium leading-relaxed mb-5">
+                I am a full-stack developer who believes the best way to demonstrate engineering capability is by building and launching real products that serve people.
+              </p>
+              <p className="text-text-secondary leading-relaxed mb-6">
+                Rather than stopping at tutorial projects, I focus on solving actual community and educational challenges. I architected and shipped <span className="text-cyan-400 font-semibold">EduraCore</span> (a science-backed English mastery platform with phonetics labs and conversational AI) and <span className="text-red-400 font-semibold">Shahrasti Blood</span> (a voluntary blood donation directory connecting donors across 10 unions).
               </p>
               <p className="text-text-secondary leading-relaxed mb-8">
-                I started my coding journey with curiosity and zero prior
-                experience. In just 6 months I went from writing my first line
-                of JavaScript to deploying full-stack applications used by real
-                people. Every day I push myself to learn something new — whether
-                it&apos;s a new Next.js pattern, a better database schema, or a
-                cleaner UI design.
+                My workflow spans frontend design in Next.js & Tailwind CSS, robust backend logic in Node.js & Express, database modeling in MongoDB, and seamless cloud deployments on Vercel.
               </p>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 {[
-                  "Open to Work",
-                  "Bangladesh 🇧🇩",
-                  "MERN Stack",
-                  "Problem Solver",
+                  "Full Stack MERN",
+                  "Next.js App Router",
+                  "Real-World Platforms",
+                  "Open for Remote Roles",
+                  "Freelance Friendly",
                 ].map((tag) => (
-                  <span key={tag} className="tag">
+                  <span key={tag} className="tag text-xs">
                     {tag}
                   </span>
                 ))}
@@ -80,14 +82,14 @@ export default function About() {
             {/* Stats */}
             <AnimatedSection
               delay={0.2}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8"
             >
               {stats.map(({ value, label }) => (
-                <div key={label} className="card p-4 text-center">
-                  <div className="font-display text-3xl gradient-text mb-1">
+                <div key={label} className="card p-4 text-center border border-border-subtle hover:border-border-glow transition-all">
+                  <div className="font-display text-2xl sm:text-3xl gradient-text mb-1 font-bold">
                     {value}
                   </div>
-                  <div className="text-text-muted text-xs font-mono">
+                  <div className="text-text-muted text-xs font-mono leading-tight">
                     {label}
                   </div>
                 </div>
@@ -104,15 +106,15 @@ export default function About() {
                 direction="left"
               >
                 <motion.div
-                  className="card p-6 flex gap-5 group"
+                  className="card p-5 sm:p-6 flex gap-4 group border border-border-subtle hover:border-border-glow transition-all"
                   whileHover={{ x: 6 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center flex-shrink-0 group-hover:from-accent-blue/30 group-hover:to-accent-purple/30 transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center flex-shrink-0 group-hover:from-accent-blue/30 group-hover:to-accent-purple/30 transition-all border border-accent-blue/20">
                     <Icon size={22} className="text-accent-blue" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-1">
+                    <h3 className="font-semibold text-text-primary mb-1 text-base">
                       {title}
                     </h3>
                     <p className="text-text-secondary text-sm leading-relaxed">
@@ -125,94 +127,41 @@ export default function About() {
 
             {/* Terminal card */}
             <AnimatedSection delay={0.4} direction="left">
-              <div className="card p-5 font-mono text-sm">
-                <div className="relative group p-[1.5px] rounded-3xl overflow-hidden bg-slate-800/50 transition-all duration-700 hover:shadow-[0_0_50px_-12px_rgba(34,211,238,0.4)]">
-                  <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 10,
-                      ease: "linear",
-                    }}
-                    className="absolute -inset-[150%] bg-gradient-conic from-cyan-500/40 via-emerald-500/40 to-amber-500/40 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                  />
-
-                  <div className="relative flex flex-col gap-6 p-8 bg-[#030712]/95 backdrop-blur-2xl rounded-[22px] border border-slate-800/60 shadow-2xl">
-                    <div className="flex items-center justify-between border-b border-slate-800/80 pb-5">
-                      <div className="flex items-center gap-3">
-                        <div className="flex gap-2">
-                          <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F57] shadow-[0_0_10px_rgba(255,95,87,0.3)]" />
-                          <div className="w-3.5 h-3.5 rounded-full bg-[#FEBC2E] shadow-[0_0_10px_rgba(254,188,46,0.3)]" />
-                          <div className="w-3.5 h-3.5 rounded-full bg-[#28C840] shadow-[0_0_10px_rgba(40,200,64,0.3)]" />
-                        </div>
-                        <span className="text-slate-500 font-mono text-[11px] tracking-wider ml-2 select-none">
-                          shahidul.sh
+              <div className="card p-2 sm:p-3 font-mono text-sm border border-border-subtle">
+                <div className="relative group p-[1px] rounded-2xl overflow-hidden bg-slate-900">
+                  <div className="relative flex flex-col gap-4 p-6 bg-[#040814]/95 backdrop-blur-2xl rounded-[20px] border border-slate-800/80 shadow-2xl">
+                    <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                        <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+                        <div className="w-3 h-3 rounded-full bg-[#28C840]" />
+                        <span className="text-slate-500 font-mono text-xs ml-2 select-none">
+                          shahidul@developer-terminal:~
                         </span>
                       </div>
                       <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                     </div>
 
-                    <div className="space-y-5 font-mono text-sm leading-relaxed">
-                      <div className="flex flex-col sm:flex-row sm:gap-4 group/line">
-                        <span className="text-cyan-400 font-semibold opacity-90">
-                          $ whoami
-                        </span>
-                        <span className="text-slate-200 tracking-tight transition-colors group-hover/line:text-white">
-                          shahidul_islam
+                    <div className="space-y-3 font-mono text-xs sm:text-sm leading-relaxed">
+                      <div className="flex flex-col sm:flex-row sm:gap-3">
+                        <span className="text-cyan-400 font-semibold">$ whoami</span>
+                        <span className="text-slate-200">shahidul_islam // Full Stack Engineer</span>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row sm:gap-3">
+                        <span className="text-cyan-400 font-semibold">$ cat products_live.json</span>
+                        <span className="text-emerald-400">
+                          [&quot;eduracore.com&quot;, &quot;shahrastiblood.com&quot;, &quot;researchpilot-ai&quot;]
                         </span>
                       </div>
 
-                      <div className="flex flex-col sm:flex-row sm:gap-4 group/line">
-                        <span className="text-cyan-400 font-semibold opacity-90">
-                          $ cat skills.txt
-                        </span>
-                        <span className="text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.2)]">
-                          MERN | Next.js | Node.js | Express.js
-                        </span>
-                      </div>
-
-                      <div className="flex flex-col sm:flex-row sm:gap-4 items-start sm:items-center group/line">
-                        <span className="text-cyan-400 font-semibold opacity-90">
-                          $ echo $STATUS
-                        </span>
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-amber-400 italic">
-                            available_for_hire=true
-                          </span>
-                          <motion.div
-                            animate={{
-                              scale: [1, 1.3, 1],
-                              rotate: [0, 10, -10, 0],
-                            }}
-                            transition={{ repeat: Infinity, duration: 3 }}
-                            className="flex items-center justify-center bg-emerald-500/10 rounded-md p-1 border border-emerald-500/20"
-                          >
-                            <svg
-                              className="w-3.5 h-3.5 text-emerald-400"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="3"
-                                d="M5 13l4 4L19 7"
-                              />
-                            </svg>
-                          </motion.div>
+                      <div className="flex flex-col sm:flex-row sm:gap-3 items-start sm:items-center">
+                        <span className="text-cyan-400 font-semibold">$ echo $AVAILABILITY</span>
+                        <div className="flex items-center gap-2 text-amber-400">
+                          <span>open_for_hire=true</span>
+                          <CheckCircle2 size={14} className="text-emerald-400" />
                         </div>
                       </div>
-                    </div>
-
-                    <div className="absolute -bottom-2 -right-2 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-1000">
-                      <svg
-                        className="w-32 h-32 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21z" />
-                      </svg>
                     </div>
                   </div>
                 </div>

@@ -1,311 +1,408 @@
 export const personal = {
   name: "Shahidul Islam",
-  role: " MERN  Stack Developer",
+  role: "Full Stack MERN Developer",
   location: "Chandpur, Bangladesh",
   email: "sahidulx47@gmail.com",
   whatsapp: "https://wa.me/8801624698738",
+  whatsappNumber: "+880 1624-698738",
   facebook: "https://www.facebook.com/share/17ihAyeDLQ/",
   github: "https://github.com/sahidul-dev-47",
   linkedin: "https://www.linkedin.com/in/sahidul-islam-/",
   website: "https://shahidul.dev",
-  tagline: "Building modern scalable web applications with clean UI and strong Problem Solving.",
+  tagline: "Building high-performance full-stack web applications and production-ready digital products with Next.js, React, and Node.js.",
   about:
-    "I am a passionate MERN stack developer with 6 months of experience. I build real-world applications using Next.js, React, Node.js, and MongoDB. My goal is to become a professional full-stack developer who ships production-ready products.",
+    "I am a dedicated Full Stack MERN Developer and solo product builder. I engineer production-ready web applications from scratch using Next.js, React, Node.js, Express, and MongoDB. With real-world platforms like EduraCore (eduracore.com) and Shahrasti Blood (shahrastiblood.com) live in production, I focus on clean architecture, intuitive UI, and reliable full-stack systems.",
   availableForWork: true,
 };
 
 export const skills = {
-  frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Framer Motion"],
-  backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Better Auth", "REST API"],
-  tools: ["Git", "GitHub", "Vercel", "Netlify", "Figma", "VS Code"],
+  frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3"],
+  backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Auth", "Better Auth", "REST APIs"],
+  tools: ["Git", "GitHub", "Vercel", "Netlify", "Postman", "Figma", "VS Code"],
 };
 
 export const projects = [
   {
-  id: "researchpilot",
-  title: "ResearchPilot AI",
-  tagline: "A Full Stack Agentic AI Research Assistant for smarter research workflows",
-  description:
-    "ResearchPilot AI is a full-stack Agentic AI application that helps users create, organize, and manage research projects while leveraging AI for report generation, conversational assistance, and research analytics in one platform.",
-  featured: true,
-  status: "Live",
-  year: "2026",
-  role: "Full Stack Developer",
-  duration: "4 days",
-  image: "/projects/researchpilot-home.png",
-  color: "#4F46E5",
-  tech: [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Tailwind CSS",
-    "Better Auth",
-    "Google OAuth",
-    "OpenAPI",
-    "TanStack Query",
-    "Recharts",
-    "Framer Motion",
-    "Vercel"
-  ],
-  liveUrl: "https://research-pilot-client.vercel.app/",
-  githubUrl: "https://github.com/sahidul-dev-47/researchPilot-client",
-  overview:
-    "ResearchPilot AI is a production-ready Full Stack Agentic AI platform that simplifies the research process by combining research management, AI-powered report generation, conversational AI, analytics, and user management into a single application.",
-  problem:
-    "Researchers and students often rely on multiple tools to manage projects, generate content, and communicate with AI, making the research process fragmented, time-consuming, and inefficient.",
-  solution:
-    "Built a modern full-stack Agentic AI platform where users can securely manage research projects, generate AI-powered research reports using OpenAPI, interact with an AI research assistant, track analytics, and organize bookmarks and favorites through a unified dashboard.",
-  outcome:
-    "Successfully delivered a production-ready Agentic AI application featuring secure authentication, AI-powered research generation, conversational AI, analytics dashboard, and a scalable backend architecture with a clean user experience.",
-  features: [
-    "Secure authentication with Better Auth and Google OAuth",
-    "Research project management with complete CRUD functionality",
-    "AI-powered research report generation using OpenAPI",
-    "Context-aware AI Chat Assistant with conversation history",
-    "Search, filtering, sorting, and pagination for research projects",
-    "Interactive analytics dashboard with charts and activity insights",
-    "Bookmarks, favorites, user profile, and notification management",
-    "Fully responsive modern UI with Framer Motion animations"
-  ],
-  challenges: [
-    "Integrating OpenAPI AI into a scalable backend while maintaining clean architecture",
-    "Synchronizing frontend, backend, authentication, and AI workflows without API mismatches",
-    "Managing secure authentication, protected routes, and role-based user experiences across the application"
-  ],
-  futureImprovements: [
-    "Document intelligence with PDF and DOCX summarization",
-    "Citation and reference generation",
-    "Multi-model AI support (OpenAI, Claude, Groq, Ollama)",
-    "Real-time collaborative research workspaces",
-    "AI-powered research comparison and recommendation engine"
-  ],
-},
+    id: "eduracore",
+    title: "EduraCore",
+    tagline: "Interactive, science-backed English mastery platform serving real learners",
+    description:
+      "EduraCore is a production full-stack ed-tech platform built from the ground up to train active English fluency through phonetics labs, an 80% mastery-gated engine, situational dialogue drills, conversational AI, and QR-verified digital certificates.",
+    featured: true,
+    status: "Live & Deployed",
+    badge: "Real World Platform",
+    isCustomDomain: true,
+    domain: "eduracore.com",
+    year: "2026",
+    role: "Lead Full Stack Developer & Solo Builder",
+    image: "/projects/eduracore.png",
+    color: "#0E7C7B",
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "Conversational AI",
+      "Web Audio API",
+      "QR Verification",
+      "Vercel"
+    ],
+    liveUrl: "https://www.eduracore.com",
+    githubUrl: "https://github.com/sahidul-dev-47",
+    overview:
+      "EduraCore addresses the fundamental flaw of traditional passive English learning in Bangladesh by transforming language acquisition into an active reflex trained like a muscle. Built completely from scratch as a solo developer.",
+    problem:
+      "Learners spend years memorizing English rules for exams, yet freeze during interviews and professional conversations due to lack of active speaking reflexes and real-world practice.",
+    solution:
+      "Engineered an 80% Mastery-Gated progression engine (no skipping without competence), interactive Phonetics and Word Stress Shifter labs, real-time conversational AI partner, 30+ situational drills, and tamper-proof QR-verified digital certificates.",
+    outcome:
+      "Live in production on a custom domain, providing free, structured education across 4 core pillars (Reading, Writing, Grammar, Spoken) with positive learner feedback.",
+    features: [
+      "80% Mastery-Gated progression engine ensuring true competence before advancing",
+      "Live interactive English conversation practice rooms for collaborative speaking",
+      "Real-time Conversational AI partner with instant grammatical feedback & model answers",
+      "Interactive Phonetics and 'Word Stress Shifter' labs for syllable accents and connected speech",
+      "30+ situational dialogue drills tailored for real-life conversational reflex",
+      "Algorithmic spaced-repetition revision engine for long-term retention",
+      "Tamper-proof QR-verified digital completion certificates",
+      "2-Minute Diagnostic Placement Test with automated level assignment",
+      "Dual curriculum tracks: General Track and Madrasah Track",
+      "Fully responsive, mobile-first design with high-performance audio playback"
+    ],
+    challenges: [
+      "Designing an 80% mastery assessment engine that evaluates speech reflexes without lagging",
+      "Building seamless browser audio pronunciation playback with minimal latency",
+      "Structuring dual-track curriculum schemas with distinct terminology and progress state"
+    ],
+    futureImprovements: [
+      "Automated speech waveform pronunciation accuracy analysis",
+      "Adaptive personalized learning paths based on learner error frequency",
+      "Progressive Web App (PWA) offline lesson synchronization"
+    ],
+  },
   {
-  id: "luminary",
-  title: "Luminary",
-  tagline: "An ebook sharing platform connecting readers with independent writers",
-  description:
-    "Luminary is a full-stack ebook sharing platform where readers discover and purchase original ebooks, and writers publish their work directly to a global audience. Features role-based dashboards, secure payments, and real-time analytics.",
-  featured: true,
-  status: "Live",
-  year: "2026",
-  role: "Mern Stack Developer",
-  duration: "6 days",
-  image: "/projects/luminary.png",
-  color: "#F4C430",
-  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Stripe", "Better-Auth", "Google-Auth", "Framer Motion", "Vercel"],
-  liveUrl: "https://luminary-client.vercel.app/",
-  githubUrl: "https://github.com/sahidul-dev-47/luminary-client",
-  overview:
-    "Luminary reimagines how independent writers reach readers, removing the traditional bottleneck of publishers and bookstores. It offers a complete marketplace experience with role-based dashboards, secure payments, and rich analytics.",
-  problem:
-    "Independent writers had no streamlined way to publish and monetize their work directly, while readers lacked a single trustworthy platform to discover original ebooks outside traditional publishing channels.",
-  solution:
-    "Built a full-stack MERN platform with three distinct roles — Reader, Writer, and Admin — each with a dedicated dashboard. Integrated Stripe for ebook purchases and writer verification fees, JWT + Google OAuth for secure authentication, and Framer Motion for a polished, animated UI.",
-  outcome:
-    "Successfully launched with a fully functional purchase flow, role-based access control, and admin analytics dashboard, delivering a production-ready platform within the project timeline.",
-  features: [
-    "Role-based dashboards for Reader, Writer, and Admin",
-    "Stripe-powered ebook purchases and writer verification payments",
-    "JWT authentication with Google OAuth login",
-    "Search, filter, sort, and pagination on the browse page",
-    "Bookmarking system for saving ebooks",
-    "Admin analytics with revenue and genre distribution charts",
-    "Fully responsive, animated UI with Framer Motion",
-  ],
-  challenges: [
-    "Designing secure, role-based route protection across three distinct user types",
-    "Structuring Stripe webhooks to reliably update purchase and payment status",
-    "Building a responsive dashboard experience that stays consistent across mobile, tablet, and desktop",
-  ],
-  futureImprovements: [
-    "Wishlist system with a dedicated wishlist page",
-    "Automated email notifications on purchase and publishing",
-    "Persistent dark mode toggle",
-    "AI-powered ebook recommendations",
-  ],
-},
-{
-  id: "sportverse",
-  title: "SportVerse",
-  tagline: "A modern sports facility booking platform for Bangladesh",
-  description:
-    "SportVerse is a full-stack sports facility booking platform where venue owners list their grounds, courts, and turfs, and athletes discover, book, and manage sessions in seconds. Features owner-verified listings, time-slot booking, and secure JWT-based authentication.",
-  featured: true,
-  status: "Live",
-  year: "2026",
-  role: "Mern Stack Developer",
-  duration: "4 days",
-  image: "/projects/sportverse.png",
-  color: "#22C55E",
-  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Better-Auth", "Google-Auth", "JWT", "Framer Motion", "Vercel"],
-  liveUrl: "https://sport-verse-client.vercel.app/",
-  githubUrl: "https://github.com/sahidul-dev-47/SportVerse-client",
-  overview:
-    "SportVerse replaces the offline, call-and-guess way of booking sports facilities in Bangladesh with a single modern platform covering discovery, booking, payment, and support.",
-  problem:
-    "Booking a sports facility in Bangladesh was largely offline — WhatsApp messages, phone calls, and guesswork about availability — with no reliable way to verify venues or manage bookings in one place.",
-  solution:
-    "Built a full-stack platform with an owner dashboard for listing venues through a 4-step animated form, JWT-secured ownership verification on every mutating request, and a booking system with live time-slot selection and cancellation.",
-  outcome:
-    "Launched with 850+ facility listings, 12,000+ active athletes, and a 4.9/5 average rating across 30+ cities, with an average booking time of under 60 seconds.",
-  features: [
-    "Email/password and Google OAuth authentication via Better Auth with JWT",
-    "4-step animated facility listing form across 12 sport categories",
-    "Owner dashboard to edit and delete facilities with backend ownership checks",
-    "Time-slot based booking system with a full booking history",
-    "JWKS-based token verification on the Express backend",
-    "Glassmorphism dark-themed, fully responsive UI with Framer Motion animations",
-  ],
-  challenges: [
-    "Wiring Better Auth's JWT plugin correctly so getToken() works through toNextJsHandler",
-    "Configuring CORS and credentials across client and server for cross-origin cookie auth",
-    "Enforcing ownership verification on every mutating route by comparing the verified JWT email against the request body",
-  ],
-  futureImprovements: [
-    "Online payment integration for facility bookings",
-    "Real-time slot availability with WebSockets",
-    "Review and rating system for facilities",
-    "Mobile app with React Native",
-  ],
-},
+    id: "shahrastiblood",
+    title: "Shahrasti Blood Donors",
+    tagline: "Community-driven emergency blood donation and humanitarian directory",
+    description:
+      "A live voluntary healthcare platform connecting emergency blood seekers with verified voluntary donors and organizations across all 10 unions of Shahrasti, Chandpur, Bangladesh.",
+    featured: true,
+    status: "Live & Deployed",
+    badge: "Community Impact",
+    isCustomDomain: true,
+    domain: "shahrastiblood.com",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/shahrastiblood.jpg",
+    color: "#DC2626",
+    tech: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    liveUrl: "https://www.shahrastiblood.com",
+    githubUrl: "https://github.com/sahidul-dev-47",
+    overview:
+      "In medical emergencies, finding eligible blood donors within rural and semi-urban upazilas is critical. Shahrasti Blood Donors replaces chaotic social media posts with a verified, structured platform.",
+    problem:
+      "Emergency patients faced critical delays finding matching blood donors across Shahrasti due to fragmented contact info and no real-time availability status.",
+    solution:
+      "Developed a dedicated portal enabling instant filtering by 8 blood groups and 10 local unions, direct emergency calling, volunteer donor self-registration, and verified humanitarian organization profiles.",
+    outcome:
+      "Successfully deployed and actively used in the Shahrasti community, dramatically reducing the time needed to locate emergency blood donors.",
+    features: [
+      "Instant blood donor search filterable by blood group and 10 unions",
+      "Donor management system with availability status toggle and donation tracking",
+      "Organization and volunteer directory with dedicated profile management",
+      "Fast mobile-first emergency calling with one-tap contact access",
+      "Bilingual interface (Bangla & English) with integrated dark mode toggle",
+      "Admin verification workflow for donor and organization authenticity"
+    ],
+    challenges: [
+      "Structuring localized geographic taxonomy across all 10 unions and wards",
+      "Optimizing mobile UX for high-stress emergency blood seekers on low-bandwidth networks",
+      "Implementing data privacy protection to safeguard volunteer donor contact information"
+    ],
+    futureImprovements: [
+      "Automated SMS alerts to nearby donors when emergency requests are posted",
+      "Geolocation radius-based donor discovery using interactive maps",
+      "Blood donation camp scheduling and volunteer event management"
+    ],
+  },
+  {
+    id: "researchpilot",
+    title: "ResearchPilot AI",
+    tagline: "Full Stack Agentic AI research assistant for smarter workflows",
+    description:
+      "ResearchPilot AI is a full-stack Agentic AI application that helps users create, organize, and manage research projects while leveraging AI for report generation, conversational assistance, and research analytics in one platform.",
+    featured: true,
+    status: "Live",
+    badge: "AI Powered",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/researchpilot-home.png",
+    color: "#4F46E5",
+    tech: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Better Auth",
+      "Google OAuth",
+      "OpenAPI",
+      "TanStack Query",
+      "Recharts",
+      "Framer Motion",
+      "Vercel"
+    ],
+    liveUrl: "https://research-pilot-client.vercel.app/",
+    githubUrl: "https://github.com/sahidul-dev-47/researchPilot-client",
+    overview:
+      "ResearchPilot AI is a production-ready Full Stack Agentic AI platform that simplifies the research process by combining research management, AI-powered report generation, conversational AI, analytics, and user management into a single application.",
+    problem:
+      "Researchers and students often rely on multiple disconnected tools to manage projects, generate summaries, and interact with AI, making the research process fragmented and inefficient.",
+    solution:
+      "Built a modern full-stack Agentic AI platform where users securely manage research projects, generate AI-powered reports, interact with a conversational assistant, and track research analytics through a unified dashboard.",
+    outcome:
+      "Successfully delivered a production-ready application featuring secure authentication, AI-powered research generation, conversational AI, analytics dashboard, and a scalable backend architecture.",
+    features: [
+      "Secure authentication with Better Auth and Google OAuth",
+      "Research project management with complete CRUD functionality",
+      "AI-powered research report generation using OpenAPI",
+      "Context-aware AI Chat Assistant with conversation history",
+      "Search, filtering, sorting, and pagination for research projects",
+      "Interactive analytics dashboard with charts and activity insights",
+      "Bookmarks, favorites, user profile, and notification management",
+      "Fully responsive modern UI with Framer Motion animations"
+    ],
+    challenges: [
+      "Integrating OpenAPI AI into a scalable backend while maintaining clean architecture",
+      "Synchronizing frontend, backend, authentication, and AI workflows without API mismatches",
+      "Managing secure authentication, protected routes, and role-based user experiences across the application"
+    ],
+    futureImprovements: [
+      "Document intelligence with PDF and DOCX summarization",
+      "Citation and reference generation",
+      "Multi-model AI support (OpenAI, Claude, Groq, Ollama)",
+      "Real-time collaborative research workspaces"
+    ],
+  },
+  {
+    id: "luminary",
+    title: "Luminary",
+    tagline: "Ebook sharing and marketplace platform connecting readers with independent writers",
+    description:
+      "Luminary is a full-stack ebook sharing platform where readers discover and purchase original ebooks, and writers publish their work directly to a global audience. Features role-based dashboards, secure Stripe payments, and real-time analytics.",
+    featured: true,
+    status: "Live",
+    badge: "Marketplace",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/luminary.png",
+    color: "#F4C430",
+    tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Stripe", "Better-Auth", "Google-Auth", "Framer Motion", "Vercel"],
+    liveUrl: "https://luminary-client.vercel.app/",
+    githubUrl: "https://github.com/sahidul-dev-47/luminary-client",
+    overview:
+      "Luminary reimagines how independent writers reach readers, removing traditional publisher bottlenecks. It offers a complete marketplace experience with role-based dashboards, secure payments, and rich analytics.",
+    problem:
+      "Independent writers lacked a streamlined way to publish and monetize their work directly, while readers needed a reliable platform to discover original ebooks outside traditional channels.",
+    solution:
+      "Built a full-stack MERN platform with three distinct roles — Reader, Writer, and Admin — each with a dedicated dashboard. Integrated Stripe for secure ebook purchases, JWT + Google OAuth for authentication, and Framer Motion for a polished UI.",
+    outcome:
+      "Delivered a complete marketplace with active purchase flows, role-based access control, and an admin analytics dashboard.",
+    features: [
+      "Role-based dashboards for Reader, Writer, and Admin",
+      "Stripe-powered ebook purchases and writer verification payments",
+      "JWT authentication with Google OAuth login",
+      "Search, filter, sort, and pagination on the browse page",
+      "Bookmarking system for saving ebooks",
+      "Admin analytics with revenue and genre distribution charts",
+      "Fully responsive, animated UI with Framer Motion"
+    ],
+    challenges: [
+      "Designing secure, role-based route protection across three distinct user roles",
+      "Structuring Stripe webhooks to reliably update purchase and payment statuses",
+      "Building a responsive dashboard experience that stays consistent across mobile, tablet, and desktop"
+    ],
+    futureImprovements: [
+      "Wishlist system with a dedicated wishlist page",
+      "Automated email notifications on purchase and publishing",
+      "AI-powered ebook recommendations"
+    ],
+  },
+  {
+    id: "sportverse",
+    title: "SportVerse",
+    tagline: "Modern sports facility booking and venue management platform",
+    description:
+      "SportVerse is a full-stack sports facility booking platform where venue owners list grounds, courts, and turfs, and athletes discover, book, and manage sessions with ease. Features owner-verified listings and time-slot booking.",
+    featured: false,
+    status: "Live",
+    badge: "Booking Engine",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/sportverse.png",
+    color: "#22C55E",
+    tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Better-Auth", "Google-Auth", "JWT", "Framer Motion", "Vercel"],
+    liveUrl: "https://sport-verse-client.vercel.app/",
+    githubUrl: "https://github.com/sahidul-dev-47/SportVerse-client",
+    overview:
+      "SportVerse digitizes the manual booking process for sports grounds, offering a streamlined venue discovery, scheduling, and management experience.",
+    problem:
+      "Booking sports facilities was offline and inefficient — relying on phone calls with no clear view of real-time slot availability or venue verification.",
+    solution:
+      "Built a full-stack platform with an owner dashboard for listing venues through an animated multi-step form, backend ownership checks on every request, and a live time-slot booking engine.",
+    outcome:
+      "Delivered an intuitive booking flow with robust authentication, role separation, and clean slot scheduling.",
+    features: [
+      "Email/password and Google OAuth authentication via Better Auth with JWT",
+      "4-step animated facility listing form across 12 sport categories",
+      "Owner dashboard to edit and delete facilities with backend ownership checks",
+      "Time-slot based booking system with complete booking history",
+      "JWKS-based token verification on the Express backend",
+      "Glassmorphism dark-themed, fully responsive UI with Framer Motion animations"
+    ],
+    challenges: [
+      "Wiring Better Auth's JWT plugin correctly through toNextJsHandler",
+      "Configuring CORS and credentials across client and server for cross-origin cookie auth",
+      "Enforcing ownership verification on every mutating route by comparing verified JWT identity"
+    ],
+    futureImprovements: [
+      "Online payment integration for automated booking confirmation",
+      "Real-time slot availability with WebSockets",
+      "Customer reviews and rating system for facilities"
+    ],
+  },
   {
     id: "pro-coder-bd",
     title: "Pro Coder BD",
-    tagline: "A full-featured coding platform for Bangladeshi developers",
+    tagline: "Coding challenges and community platform for developers",
     description:
-      "Pro Coder BD is a community-driven coding platform designed for Bangladeshi developers to learn, practice, and grow together. It features coding challenges, tutorials, and a community forum.",
-    featured: true,
+      "Pro Coder BD is a community-oriented coding platform featuring interactive challenges, progress tracking, tutorials, and a community discussion forum.",
+    featured: false,
     status: "Live",
     year: "2026",
-    role: " Mern Stack Developer",
-    duration: "4 Days",
+    role: "Full Stack Developer",
     image: "/projects/pro-coder.png",
     color: "#6366f1",
-    tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS","Better-Auth", "Google-Auth", "Vercel"],
+    tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS", "Better-Auth", "Google-Auth", "Vercel"],
     liveUrl: "https://skillsphere-app-l97u.vercel.app/",
     githubUrl: "https://github.com/sahidul-dev-47/skillsphere-app",
     overview:
-      "Pro Coder BD bridges the gap between Bangladeshi developers and global coding standards. The platform offers curated challenges, real-time leaderboards, and structured learning paths.",
+      "Pro Coder BD provides curated programming challenges and structured learning paths with a localized, beginner-friendly experience.",
     problem:
-      "Bangladeshi developers lacked a localized platform that understood their learning context, language barriers, and career goals in the regional tech market.",
+      "Aspiring developers often struggle with scattered resources and lack structured practice platforms with localized guidance.",
     solution:
-      "Built a full-stack platform with localized content, Bangla-friendly UI, progressive challenges from beginner to advanced, and a community forum for peer learning.",
+      "Built a full-stack platform featuring categorized programming challenges, progress leaderboards, user authentication, and peer discussion forums.",
     outcome:
-      "The platform attracted 200+ users within the first month, with an average session time of 18 minutes, indicating strong engagement.",
+      "A fully functional learning and challenge hub with responsive design and seamless authentication.",
     features: [
-      "Coding challenges with real-time code execution",
-      "User authentication with JWT",
-      "Community forum with threaded discussions",
-      "Leaderboard and achievement system",
-      "Admin dashboard for content management",
-      "Mobile-responsive design",
+      "Categorized coding challenges with solution submission",
+      "User authentication with JWT & Google OAuth",
+      "Community discussion forum with threaded replies",
+      "Leaderboard and profile achievement system",
+      "Admin dashboard for challenge management",
+      "Mobile-responsive modern UI"
     ],
     challenges: [
-      "Implementing real-time code execution securely in a sandboxed environment",
-      "Optimizing MongoDB queries for leaderboard computations at scale",
-      "Designing a flexible content schema for varied challenge types",
+      "Designing clean data models for challenge sets and user progress",
+      "Optimizing MongoDB queries for leaderboard score calculations",
+      "Creating an intuitive code-friendly UI layout"
     ],
     futureImprovements: [
-      "AI-powered code review and hints",
-      "Video tutorial integration",
-      "Collaborative coding rooms",
-      "Mobile app with React Native",
+      "Integrated code playground with in-browser execution",
+      "Collaborative pair coding rooms",
+      "Automated hint generation system"
     ],
   },
   {
-  id: "wandarlust",
-  title: "Wandarlust",
-  tagline: "Travel booking system to discover and book destinations worldwide",
-  description:
-    "Wanderlust is a travel booking platform where users discover curated destinations, book trips, and manage their bookings, while authorized users can add and manage destination listings through a centralized content management system.",
-  featured: true,
-  status: "Live",
-  year: "2026",
-  role: "Mern Stack Developer",
-  duration: "3 Days",
-  image: "/projects/wandarlust.png",
-  color: "#10b981",
-  tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "React-Router", "Vercel"],
-  liveUrl: "https://wonderlust-gold.vercel.app/",
-  githubUrl: "https://github.com/sahidul-dev-47/wanderlust-client",
-  overview:
-    "Wanderlust brings destination discovery, booking, and content management together in one platform, letting travelers explore curated trips by category, budget, and duration while giving authorized users full control over the destination catalog.",
-  problem:
-    "Travelers needed a single place to browse, filter, and book trips by budget and interest, while the platform itself needed a reliable way to keep the destination catalog fresh without manual backend intervention.",
-  solution:
-    "Built a full-stack Next.js platform with dynamic destination listings, category-based browsing (Beach, Mountain, City, Adventure, Cultural, Luxury), a booking and profile system, and a dedicated 'Add Destinations' flow letting authorized users create, edit, and delete listings dynamically.",
-  outcome:
-    "Launched with 120+ destinations across 6 categories, a live booking flow, and a catalog that reportedly serves 50K+ travelers, backed by a fully dynamic content management system for destinations.",
-  features: [
-    "Dynamic destination listings with search by location, date, budget, and group size",
-    "Category-based browsing across Beach, Mountain, City, Adventure, Cultural, and Luxury trips",
-    "Destination content management — authorized users can add, edit, and delete destinations",
-    "User authentication with sign in / sign up",
-    "My Bookings dashboard to track and manage trip bookings",
-    "User profile management",
-  ],
-  challenges: [
-    "Designing a flexible destination schema that supports categories, pricing, and location filtering",
-    "Building a smooth 'Add Destinations' CRUD flow with proper authorization checks",
-    "Keeping search and filter performant as the destination catalog grows",
-  ],
-  futureImprovements: [
-    "Online payment integration for trip bookings",
-    "Reviews and ratings for destinations",
-    "Wishlist / save-for-later for trips",
-    "Real-time availability and pricing updates",
-  ],
-},
+    id: "wandarlust",
+    title: "Wanderlust",
+    tagline: "Destination discovery and curated travel booking platform",
+    description:
+      "Wanderlust is a travel booking platform where travelers discover curated destinations, book trips, and manage itineraries with a dedicated content management flow.",
+    featured: false,
+    status: "Live",
+    year: "2026",
+    role: "Full Stack Developer",
+    image: "/projects/wandarlust.png",
+    color: "#10b981",
+    tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Vercel"],
+    liveUrl: "https://wonderlust-gold.vercel.app/",
+    githubUrl: "https://github.com/sahidul-dev-47/wanderlust-client",
+    overview:
+      "Wanderlust connects travel enthusiasts with curated getaways through interactive search, category filtering, and booking management.",
+    problem:
+      "Travelers needed a centralized platform to browse trips by budget, activity type, and destination without cluttered interfaces.",
+    solution:
+      "Built a full-stack Next.js platform with category-based browsing (Beach, Mountain, Adventure, Cultural, Luxury), booking management, and a dynamic destination CMS.",
+    outcome:
+      "A fast, visually appealing travel discovery platform with end-to-end booking flow.",
+    features: [
+      "Dynamic destination listings with search by location, budget, and group size",
+      "Category-based browsing across Beach, Mountain, Adventure, and Luxury trips",
+      "Destination content management — authorized users can manage listings",
+      "My Bookings dashboard to track reservations",
+      "User profile management and responsive layout"
+    ],
+    challenges: [
+      "Designing a flexible schema supporting multiple travel categories and pricing tiers",
+      "Building seamless CRUD workflows for destination management",
+      "Ensuring responsive layout performance on mobile viewports"
+    ],
+    futureImprovements: [
+      "Online payment integration with Stripe / SSLCommerz",
+      "Customer reviews and traveler photo uploads",
+      "Interactive destination maps"
+    ],
+  },
   {
     id: "ai-model-hub",
     title: "AI Model Hub",
-    tagline: "Centralized platform to explore and compare AI models",
+    tagline: "Directory and comparison platform for modern AI/ML models",
     description:
-      "AI Model Hub is a directory and comparison platform for AI/ML models, allowing developers to discover, compare, and integrate state-of-the-art models into their projects.",
-    featured: true,
-    status: "In Progress",
+      "AI Model Hub is a directory and comparison platform allowing developers to discover, compare benchmarks, and inspect integration snippets for state-of-the-art AI models.",
+    featured: false,
+    status: "Live",
     year: "2026",
-    role: "Frontend Lead",
-    duration: "3 Days",
+    role: "Frontend Developer",
     image: "/projects/ai-model.png",
     color: "#8b5cf6",
-    tech: ["Html5", "Css", "Tailwind CSS", "Javascipt", "Dom", "Netlify"],
+    tech: ["JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Netlify"],
     liveUrl: "https://ai-model-hub-web.netlify.app/",
     githubUrl: "https://github.com/sahidul-dev-47/Ai-model-hub",
     overview:
-      "AI Model Hub serves as a single destination for AI practitioners and hobbyists to discover models, read benchmarks, and find integration guides — all in one beautifully designed interface.",
+      "AI Model Hub provides a single interface for developers to discover model specifications, explore benchmark charts, and find quickstart snippets.",
     problem:
-      "AI models are scattered across Hugging Face, GitHub, and various company sites. Comparing capabilities and finding integration docs is time-consuming.",
+      "AI model documentation is scattered across numerous vendor pages, making rapid side-by-side comparison cumbersome.",
     solution:
-      "Aggregated model data into a unified API, built powerful filtering and comparison UI, and created standardized integration guides for the most popular models.",
+      "Built a fast, categorized directory with quick filtering, side-by-side comparison cards, and code snippets.",
     outcome:
-      "Currently in beta with 50+ models indexed. Growing user base of developers using it for model research.",
+      "A fast, responsive web resource for discovering and evaluating popular AI models.",
     features: [
-      "Model directory with advanced filtering",
-      "Side-by-side model comparison",
-      "Benchmark visualization charts",
-      "Integration code snippets",
-      "Community ratings and reviews",
-      "API endpoint testing playground",
+      "Categorized model directory with search and tag filtering",
+      "Side-by-side model capability comparison",
+      "Integration code snippets for popular frameworks",
+      "Fully responsive modern UI"
     ],
     challenges: [
-      "Normalizing data from multiple AI providers with different schemas",
-      "Building a fast search experience across hundreds of models",
-      "Keeping model information up-to-date as the AI landscape changes rapidly",
+      "Designing clean data structures to represent varying model specifications",
+      "Creating an intuitive comparison layout that scales well on small screens"
     ],
     futureImprovements: [
-      "Live model inference testing in the browser",
-      "User-submitted model reviews",
-      "Personalized model recommendations",
-      "Newsletter with weekly model updates",
+      "Direct API testing playground in browser",
+      "Automated benchmark data updates",
+      "User-submitted benchmarks and reviews"
     ],
   },
-  
- 
 ];
 
 export const education = [
@@ -314,23 +411,23 @@ export const education = [
     institution: "Khila Bazar School And College",
     location: "Chandpur, Bangladesh",
     year: "2022–2023",
-    field: "Buisness Studies",
+    field: "Business Studies",
   },
 ];
 
 export const experience = [
   {
-    role: " Mern Stack Developer (Learned From Programming.hero",
-    company: "Independent Projects",
+    role: "Full Stack Developer & Solo Product Builder",
+    company: "Production Web Applications",
     location: "Chandpur, Bangladesh",
-    period: "2026 – Present",
+    period: "2024 – Present",
     description:
-      "Building production-ready full-stack web applications using the MERN stack. Completed 5 major projects spanning Social, edtech, productivity, and developer tools.",
+      "Engineering and deploying real-world, full-stack web platforms serving active users. Leading end-to-end architecture from database design to modern UI and cloud deployments.",
     highlights: [
-      "Developed 5 applications from concept to deployment",
-      "Mastered Next.js App Router and modern React patterns",
-      "Implemented authentication systems with JWT and Better Auth",
-      "Deployed and maintained apps on Vercel and Netlify",
+      "Built & launched EduraCore (eduracore.com) — a full-scale interactive English mastery platform featuring mastery-gated progression, phonetics labs, and conversational AI",
+      "Engineered Shahrasti Blood (shahrastiblood.com) — a live community emergency blood donation directory connecting donors across 10 unions",
+      "Architected ResearchPilot AI — an Agentic AI research workspace with OpenAPI LLM integration and analytics dashboards",
+      "Built Luminary & SportVerse — production-style platforms with role-based access control, Stripe checkout, and JWT authentication"
     ],
   },
 ];

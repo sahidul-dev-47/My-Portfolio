@@ -2,14 +2,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, MessageCircle, FileText } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { personal } from "@/data/portfolio";
 
 const ROLES = [
-  " MERN Stack Developer",
-  "Next.js Developer",
-  "React Developer",
-  "Junior Web Developer",
+  "Full Stack MERN Developer",
+  "Next.js & React Engineer",
+  "Solo Product Builder",
+  "Backend & REST API Developer",
 ];
 
 function TypeWriter({ words }) {
@@ -46,26 +47,26 @@ function TypeWriter({ words }) {
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
+  visible: { transition: { staggerChildren: 0.04 } },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] },
+    transition: { duration: 0.3, ease: "easeOut" },
   },
 };
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-blue/8 rounded-full blur-[120px] animate-blob" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent-purple/8 rounded-full blur-[120px] animate-blob [animation-delay:3s]" />
-        <div className="absolute bottom-1/4 left-1/2 w-[300px] h-[300px] bg-accent-cyan/5 rounded-full blur-[100px] animate-blob [animation-delay:5s]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-blue/10 rounded-full blur-[130px] animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-[420px] h-[420px] bg-accent-purple/10 rounded-full blur-[130px] animate-blob [animation-delay:3s]" />
+        <div className="absolute bottom-1/4 left-1/2 w-[320px] h-[320px] bg-accent-cyan/10 rounded-full blur-[110px] animate-blob [animation-delay:5s]" />
 
         {/* Grid overlay */}
         <div
@@ -86,16 +87,16 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           {/* Status badge */}
-          <motion.div variants={item} className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-border-subtle text-sm">
+          <motion.div variants={item} className="flex justify-center mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/30 text-sm shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
-              <span className="text-text-secondary font-mono text-xs tracking-wide">
-                Available for work
+              <span className="text-emerald-400 font-mono text-xs tracking-wide font-medium">
+                Available for Full-time & Freelance Projects
               </span>
-              <Sparkles size={12} className="text-accent-blue" />
+              <Sparkles size={12} className="text-emerald-400" />
             </div>
           </motion.div>
 
@@ -111,45 +112,69 @@ export default function Hero() {
           {/* Role typewriter */}
           <motion.div
             variants={item}
-            className="text-xl sm:text-2xl md:text-3xl font-light text-text-secondary mb-6 min-h-[2.5rem]"
+            className="text-xl sm:text-2xl md:text-3xl font-light text-text-secondary mb-4 min-h-[2.5rem]"
           >
             <TypeWriter words={ROLES} />
           </motion.div>
 
-          {/* Location */}
+          {/* Location & Ethos */}
           <motion.div
             variants={item}
-            className="flex items-center justify-center gap-2 text-text-muted font-mono text-sm mb-8"
+            className="flex flex-wrap items-center justify-center gap-3 text-text-muted font-mono text-xs sm:text-sm mb-6"
           >
-            <span>📍</span>
-            <span>{personal.location}</span>
+            <span className="flex items-center gap-1.5">
+              <span>📍</span>
+              <span>{personal.location}</span>
+            </span>
+            <span className="text-white/20">•</span>
+            <span className="text-cyan-400/90 font-medium">
+              Solo Builder behind EduraCore & Shahrasti Blood
+            </span>
           </motion.div>
 
           {/* Tagline */}
           <motion.p
             variants={item}
-            className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+            className="text-text-secondary text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-8"
           >
             {personal.tagline}
           </motion.p>
 
           {/* CTAs */}
-          <Link href="/projects" className="btn-primary">
-            View Projects
-            <ArrowDown size={16} className="-rotate-90" />
-          </Link>
-          <Link href="/resume" className="btn-secondary">
-            Download Resume
-          </Link>
+          <motion.div
+            variants={item}
+            className="flex flex-wrap items-center justify-center gap-4 mb-10"
+          >
+            <Link href="/projects" className="btn-primary">
+              <span>Explore Live Projects</span>
+              <ArrowDown size={16} className="-rotate-90" />
+            </Link>
+
+            <a
+              href={personal.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-all duration-300"
+            >
+              <FaWhatsapp size={18} className="text-emerald-400" />
+              <span>Chat on WhatsApp</span>
+            </a>
+
+            <Link href="/resume" className="btn-secondary">
+              <FileText size={16} />
+              <span>View Resume</span>
+            </Link>
+          </motion.div>
 
           {/* Social links */}
           <motion.div
             variants={item}
-            className="flex items-center justify-center gap-4"
+            className="flex items-center justify-center gap-3 sm:gap-4"
           >
             {[
               { icon: Github, href: personal.github, label: "GitHub" },
               { icon: Linkedin, href: personal.linkedin, label: "LinkedIn" },
+              { icon: FaWhatsapp, href: personal.whatsapp, label: "WhatsApp" },
               { icon: Mail, href: `mailto:${personal.email}`, label: "Email" },
             ].map(({ icon: Icon, href, label }) => (
               <a
@@ -168,19 +193,19 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
-          <span className="font-mono text-xs text-text-muted tracking-widest">
+          <span className="font-mono text-[10px] text-text-muted tracking-widest uppercase">
             SCROLL
           </span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown size={16} className="text-accent-blue" />
+            <ArrowDown size={14} className="text-accent-blue" />
           </motion.div>
         </motion.div>
       </div>

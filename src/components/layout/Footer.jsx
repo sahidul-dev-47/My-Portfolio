@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { personal } from "@/data/portfolio";
 
 export default function Footer() {
@@ -8,6 +9,7 @@ export default function Footer() {
   const socials = [
     { icon: Github, href: personal.github, label: "GitHub" },
     { icon: Linkedin, href: personal.linkedin, label: "LinkedIn" },
+    { icon: FaWhatsapp, href: personal.whatsapp, label: "WhatsApp" },
     { icon: Mail, href: `mailto:${personal.email}`, label: "Email" },
   ];
 
@@ -21,7 +23,7 @@ export default function Footer() {
               Shahidul<span className="gradient-text">.</span>
             </Link>
             <p className="text-text-secondary text-sm mt-1 font-body">
-              Full Stack MERN Developer
+              Full Stack MERN Developer & Solo Builder
             </p>
           </div>
 
@@ -31,6 +33,7 @@ export default function Footer() {
               { href: "/", label: "Home" },
               { href: "/projects", label: "Projects" },
               { href: "/resume", label: "Resume" },
+              { href: "/contact", label: "Contact" },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -61,7 +64,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-border-subtle text-center">
           <p className="font-mono text-xs text-text-muted">
-            © {year} Shahidul Islam. Built with Next.js & Tailwind CSS.
+            © {year} Shahidul Islam. Built with Next.js 14 & Tailwind CSS.
           </p>
         </div>
       </div>
