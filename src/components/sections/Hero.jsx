@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Sparkles, MessageCircle, FileText } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -86,6 +87,28 @@ export default function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto text-center"
         >
+          {/* Profile Photo Avatar */}
+          <motion.div variants={item} className="flex justify-center mb-6">
+            <div className="relative group">
+              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-[3px] bg-gradient-to-tr from-accent-blue via-accent-purple to-emerald-400 shadow-[0_0_35px_rgba(79,142,247,0.35)] group-hover:shadow-[0_0_50px_rgba(79,142,247,0.55)] transition-all duration-500">
+                <div className="w-full h-full rounded-full overflow-hidden relative bg-bg-card border-2 border-bg-primary">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Shahidul Islam - Full Stack MERN Developer"
+                    fill
+                    priority
+                    sizes="112px"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div className="absolute -bottom-1 -right-1 px-2.5 py-0.5 rounded-full bg-[#050508]/90 border border-emerald-500/40 text-[10px] font-mono text-emerald-400 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>Online</span>
+              </div>
+            </div>
+          </motion.div>
+
           {/* Status badge */}
           <motion.div variants={item} className="flex justify-center mb-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-emerald-500/30 text-sm shadow-sm">

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { personal } from "@/data/portfolio";
@@ -54,6 +55,29 @@ export default function About() {
           {/* Left — text */}
           <div>
             <AnimatedSection delay={0.1}>
+              {/* Profile Card */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 mb-8 p-5 rounded-2xl glass border border-border-subtle hover:border-border-glow transition-all">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-blue/40 shadow-xl bg-bg-card">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Shahidul Islam"
+                    fill
+                    sizes="112px"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <div className="text-center sm:text-left">
+                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-accent-blue/10 border border-accent-blue/20 text-accent-blue text-xs font-mono mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse" />
+                    Full Stack Developer
+                  </div>
+                  <h3 className="text-xl font-bold text-text-primary">Shahidul Islam</h3>
+                  <p className="text-text-secondary text-xs sm:text-sm mt-1 leading-relaxed">
+                    Product builder based in Chandpur, Bangladesh. Architecting full-stack digital experiences with Next.js, React, Node.js & MongoDB.
+                  </p>
+                </div>
+              </div>
+
               <p className="text-text-primary text-lg sm:text-xl font-medium leading-relaxed mb-5">
                 I am a full-stack developer who believes the best way to demonstrate engineering capability is by building and launching real products that serve people.
               </p>

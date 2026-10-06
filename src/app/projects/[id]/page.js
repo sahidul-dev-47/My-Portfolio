@@ -5,7 +5,7 @@ import { projects } from "@/data/portfolio";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import {
   ArrowLeft, Github, ExternalLink, Globe, User,
-  Calendar, CheckCircle, AlertTriangle, Lightbulb, Zap
+  Calendar, CheckCircle, AlertTriangle, Lightbulb, Zap, Lock
 } from "lucide-react";
 
 export async function generateStaticParams() {
@@ -142,6 +142,84 @@ export default function ProjectDetailPage({ params }) {
             </div>
           </div>
         </AnimatedSection>
+
+        {/* Interactive Browser Mockup */}
+        {project.image && (
+          <AnimatedSection className="mb-12">
+            <div className="card p-3 sm:p-5 border border-white/10 shadow-2xl overflow-hidden bg-bg-card/90">
+              {/* Browser Chrome Header Bar */}
+              <div className="flex items-center justify-between px-3 sm:px-4 py-2.5 mb-3 rounded-xl bg-black/60 border border-white/5">
+                {/* macOS Window Controls */}
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-[#FF5F56] inline-block shadow-[0_0_8px_rgba(255,95,86,0.5)]" />
+                  <span className="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block shadow-[0_0_8px_rgba(255,189,46,0.5)]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27C93F] inline-block shadow-[0_0_8px_rgba(39,201,63,0.5)]" />
+                </div>
+
+                {/* Browser URL Address Pill */}
+                <div className="flex items-center gap-2 px-3 sm:px-5 py-1.5 rounded-lg bg-white/[0.05] border border-white/10 text-xs text-text-secondary max-w-[220px] sm:max-w-md truncate font-mono shadow-inner">
+                  <Lock size={12} className="text-emerald-400 flex-shrink-0" />
+                  <span className="text-emerald-400 font-semibold flex-shrink-0 hidden sm:inline">https://</span>
+                  <span className="text-text-primary font-medium truncate">
+                    {project.isCustomDomain
+                      ? project.domain
+                      : project.liveUrl.replace("https://", "").replace(/\/$/, "")}
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-auto flex-shrink-0" />
+                </div>
+
+                {/* Right Action Button */}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-accent-blue hover:text-white px-2.5 py-1 rounded-md bg-accent-blue/10 hover:bg-accent-blue/20 transition-all font-mono"
+                >
+                  <span className="hidden sm:inline">Live Demo</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+
+              {/* Browser Viewport with Interactive Hover Showcase */}
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit live demo for ${project.title}`}
+                className="group relative block aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl overflow-hidden bg-black/70 border border-white/5 cursor-pointer shadow-lg"
+              >
+                <Image
+                  src={project.image}
+                  alt={`${project.title} live interface preview`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 1024px"
+                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  priority
+                />
+
+                {/* Interactive Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 sm:p-6">
+                  <div className="flex items-center gap-2 text-white text-xs sm:text-sm font-medium bg-black/70 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/10 shadow-lg">
+                    <Globe size={14} className="text-accent-blue" />
+                    <span>Interactive Preview • Click to explore live site</span>
+                  </div>
+                  <span className="btn-primary text-xs py-2 px-4 shadow-glow flex items-center gap-1.5">
+                    Launch App <ExternalLink size={13} />
+                  </span>
+                </div>
+              </a>
+
+              {/* Caption Footer */}
+              <div className="flex items-center justify-between pt-3 px-1 text-xs text-text-muted font-mono">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  Live Production Architecture
+                </span>
+                <span>Click mockup to launch live app ↗</span>
+              </div>
+            </div>
+          </AnimatedSection>
+        )}
 
         {/* Tech Stack */}
         <AnimatedSection className="mb-6">

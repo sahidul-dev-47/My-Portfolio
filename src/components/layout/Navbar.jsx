@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -87,6 +88,17 @@ export default function Navbar() {
     return pathname === href;
   };
 
+  const desktopNavLinks = navLinks.filter((link) => link.href !== "/");
+
+  const handleLogoClick = (e) => {
+    setOpen(false);
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("");
+    }
+  };
+
   const handleLinkClick = (e, href) => {
     setOpen(false);
     if (href.startsWith("/#") && pathname === "/") {
@@ -116,19 +128,31 @@ export default function Navbar() {
                 : "bg-bg-primary/50 backdrop-blur-md border border-white/5"
             }`}
           >
-            {/* Logo */}
-            <Link href="/" prefetch={true} className="group flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center text-xs font-bold text-white font-mono shadow-sm">
-                SI
+            {/* Logo - clicking navigates to / or scrolls to top */}
+            <Link
+              href="/"
+              prefetch={true}
+              onClick={handleLogoClick}
+              className="group flex items-center gap-2.5 cursor-pointer"
+            >
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-accent-blue/30 shadow-sm group-hover:scale-105 group-hover:border-accent-blue/70 transition-all bg-bg-card">
+                <Image
+                  src="/profile.jpg"
+                  alt="Shahidul Islam"
+                  fill
+                  sizes="32px"
+                  priority
+                  className="object-cover object-top"
+                />
               </div>
               <span className="font-display text-lg text-text-primary hidden sm:block">
                 Shahidul<span className="gradient-text">.</span>
               </span>
             </Link>
 
-            {/* Desktop Navigation Links with High-Visibility Active Pill */}
+            {/* Desktop Navigation Links (Home excluded, logo serves as Home) */}
             <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-2xl border border-white/5">
-              {navLinks.map((link) => {
+              {desktopNavLinks.map((link) => {
                 const isActive = checkActive(link.href);
                 return (
                   <Link

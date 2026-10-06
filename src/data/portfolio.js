@@ -12,11 +12,12 @@ export const personal = {
   tagline: "Building high-performance full-stack web applications and production-ready digital products with Next.js, React, and Node.js.",
   about:
     "I am a dedicated Full Stack MERN Developer and solo product builder. I engineer production-ready web applications from scratch using Next.js, React, Node.js, Express, and MongoDB. With real-world platforms like EduraCore (eduracore.com) and Shahrasti Blood (shahrastiblood.com) live in production, I focus on clean architecture, intuitive UI, and reliable full-stack systems.",
+  avatar: "/profile.jpg",
   availableForWork: true,
 };
 
 export const skills = {
-  frontend: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3"],
+  frontend: ["JavaScript", "React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML5", "CSS3"],
   backend: ["Node.js", "Express.js", "MongoDB", "Mongoose", "JWT Auth", "Better Auth", "REST APIs"],
   tools: ["Git", "GitHub", "Vercel", "Netlify", "Postman", "Figma", "VS Code"],
 };
@@ -149,7 +150,7 @@ export const projects = [
     tech: [
       "Next.js",
       "React",
-      "TypeScript",
+      "JavaScript",
       "Node.js",
       "Express.js",
       "MongoDB",
@@ -279,128 +280,6 @@ export const projects = [
       "Online payment integration for automated booking confirmation",
       "Real-time slot availability with WebSockets",
       "Customer reviews and rating system for facilities"
-    ],
-  },
-  {
-    id: "pro-coder-bd",
-    title: "Pro Coder BD",
-    tagline: "Coding challenges and community platform for developers",
-    description:
-      "Pro Coder BD is a community-oriented coding platform featuring interactive challenges, progress tracking, tutorials, and a community discussion forum.",
-    featured: false,
-    status: "Live",
-    year: "2026",
-    role: "Full Stack Developer",
-    image: "/projects/pro-coder.png",
-    color: "#6366f1",
-    tech: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS", "Better-Auth", "Google-Auth", "Vercel"],
-    liveUrl: "https://skillsphere-app-l97u.vercel.app/",
-    githubUrl: "https://github.com/sahidul-dev-47/skillsphere-app",
-    overview:
-      "Pro Coder BD provides curated programming challenges and structured learning paths with a localized, beginner-friendly experience.",
-    problem:
-      "Aspiring developers often struggle with scattered resources and lack structured practice platforms with localized guidance.",
-    solution:
-      "Built a full-stack platform featuring categorized programming challenges, progress leaderboards, user authentication, and peer discussion forums.",
-    outcome:
-      "A fully functional learning and challenge hub with responsive design and seamless authentication.",
-    features: [
-      "Categorized coding challenges with solution submission",
-      "User authentication with JWT & Google OAuth",
-      "Community discussion forum with threaded replies",
-      "Leaderboard and profile achievement system",
-      "Admin dashboard for challenge management",
-      "Mobile-responsive modern UI"
-    ],
-    challenges: [
-      "Designing clean data models for challenge sets and user progress",
-      "Optimizing MongoDB queries for leaderboard score calculations",
-      "Creating an intuitive code-friendly UI layout"
-    ],
-    futureImprovements: [
-      "Integrated code playground with in-browser execution",
-      "Collaborative pair coding rooms",
-      "Automated hint generation system"
-    ],
-  },
-  {
-    id: "wandarlust",
-    title: "Wanderlust",
-    tagline: "Destination discovery and curated travel booking platform",
-    description:
-      "Wanderlust is a travel booking platform where travelers discover curated destinations, book trips, and manage itineraries with a dedicated content management flow.",
-    featured: false,
-    status: "Live",
-    year: "2026",
-    role: "Full Stack Developer",
-    image: "/projects/wandarlust.png",
-    color: "#10b981",
-    tech: ["Next.js", "React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Vercel"],
-    liveUrl: "https://wonderlust-gold.vercel.app/",
-    githubUrl: "https://github.com/sahidul-dev-47/wanderlust-client",
-    overview:
-      "Wanderlust connects travel enthusiasts with curated getaways through interactive search, category filtering, and booking management.",
-    problem:
-      "Travelers needed a centralized platform to browse trips by budget, activity type, and destination without cluttered interfaces.",
-    solution:
-      "Built a full-stack Next.js platform with category-based browsing (Beach, Mountain, Adventure, Cultural, Luxury), booking management, and a dynamic destination CMS.",
-    outcome:
-      "A fast, visually appealing travel discovery platform with end-to-end booking flow.",
-    features: [
-      "Dynamic destination listings with search by location, budget, and group size",
-      "Category-based browsing across Beach, Mountain, Adventure, and Luxury trips",
-      "Destination content management — authorized users can manage listings",
-      "My Bookings dashboard to track reservations",
-      "User profile management and responsive layout"
-    ],
-    challenges: [
-      "Designing a flexible schema supporting multiple travel categories and pricing tiers",
-      "Building seamless CRUD workflows for destination management",
-      "Ensuring responsive layout performance on mobile viewports"
-    ],
-    futureImprovements: [
-      "Online payment integration with Stripe / SSLCommerz",
-      "Customer reviews and traveler photo uploads",
-      "Interactive destination maps"
-    ],
-  },
-  {
-    id: "ai-model-hub",
-    title: "AI Model Hub",
-    tagline: "Directory and comparison platform for modern AI/ML models",
-    description:
-      "AI Model Hub is a directory and comparison platform allowing developers to discover, compare benchmarks, and inspect integration snippets for state-of-the-art AI models.",
-    featured: false,
-    status: "Live",
-    year: "2026",
-    role: "Frontend Developer",
-    image: "/projects/ai-model.png",
-    color: "#8b5cf6",
-    tech: ["JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Netlify"],
-    liveUrl: "https://ai-model-hub-web.netlify.app/",
-    githubUrl: "https://github.com/sahidul-dev-47/Ai-model-hub",
-    overview:
-      "AI Model Hub provides a single interface for developers to discover model specifications, explore benchmark charts, and find quickstart snippets.",
-    problem:
-      "AI model documentation is scattered across numerous vendor pages, making rapid side-by-side comparison cumbersome.",
-    solution:
-      "Built a fast, categorized directory with quick filtering, side-by-side comparison cards, and code snippets.",
-    outcome:
-      "A fast, responsive web resource for discovering and evaluating popular AI models.",
-    features: [
-      "Categorized model directory with search and tag filtering",
-      "Side-by-side model capability comparison",
-      "Integration code snippets for popular frameworks",
-      "Fully responsive modern UI"
-    ],
-    challenges: [
-      "Designing clean data structures to represent varying model specifications",
-      "Creating an intuitive comparison layout that scales well on small screens"
-    ],
-    futureImprovements: [
-      "Direct API testing playground in browser",
-      "Automated benchmark data updates",
-      "User-submitted benchmarks and reviews"
     ],
   },
 ];
